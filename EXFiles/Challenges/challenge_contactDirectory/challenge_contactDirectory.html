@@ -1,0 +1,12 @@
+<template>
+	<lightning-card title="Contact Directory" icon-name="utility:user">
+		<div class="slds-scrollable scrollerSize">
+			<lightning-datatable 
+				key-field="Id" 
+				data={contacts.data} 
+				columns={columnConfig}
+				hide-checkbox-column
+			></lightning-datatable>
+		</div>
+	</lightning-card>
+</template>

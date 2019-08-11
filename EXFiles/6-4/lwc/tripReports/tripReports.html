@@ -1,0 +1,27 @@
+<template>
+	<template if:true={addOrEditMode}>
+		<lightning-layout horizontal-align="space" multiple-rows="true" >
+			<lightning-layout-item flexibility="auto" class="slds-p-right_small slds-p-bottom_small" size="6" small-device-size="12" medium-device-size="7" large-device-size="8">
+				<!-- deploy the advanced trip report form here -->
+			</lightning-layout-item>
+			<lightning-layout-item flexibility="auto"  size="6" small-device-size="12" medium-device-size="5" large-device-size="4" >
+				<lightning-card variant="Narrow" title="Instructions" icon-name="standard:article">
+					<p class="slds-p-horizontal_small">
+						When filling out your Trip Report Form, please be as specific as possible. 
+						For example, if you leave a poor review for the hotel, please elaborate why. 
+					</p>
+					<BR />
+					<ul class="slds-list_dotted">
+						<li>Was the Wifi poor?</li>
+						<li>Did the air conditioning fail?</li>
+					</ul>
+				</lightning-card>
+			</lightning-layout-item>
+		</lightning-layout> 
+	</template>
+
+	<template if:true={browseMode}>
+		<!-- deploy the trip report browser here -->
+	</template>
+
+</template>

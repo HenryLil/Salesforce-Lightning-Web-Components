@@ -1,0 +1,37 @@
+<template>
+
+	<lightning-layout horizontal-align="space">
+
+		<lightning-layout-item padding="around-small" size="2">
+			<c-aw-navigation onnavitemselected={handleNavItemSelected}></c-aw-navigation>
+		</lightning-layout-item>
+
+		<template if:true={studentBrowserView}>
+			<lightning-layout-item flexibility="auto" padding="around-small" size="6">
+				<c-student-browser></c-student-browser>
+			</lightning-layout-item>
+			<lightning-layout-item flexibility="auto" padding="around-small" size="4">
+				<c-student-detail></c-student-detail>
+			</lightning-layout-item>
+		</template>
+
+		<template if:true={tripReportView}>
+			<lightning-layout-item flexibility="auto" padding="around-small" size="10">
+				<lightning-card title="Trip Reports will go here"></lightning-card>
+			</lightning-layout-item>
+		</template>
+
+		<template if:true={certifiedStudentsView}>
+			<lightning-layout-item flexibility="auto" padding="around-small" size="10">
+				<lightning-card title="Certified Students will go here"></lightning-card>
+			</lightning-layout-item>
+		</template>
+
+		<template if:true={certPopularityView}>
+			<lightning-layout-item flexibility="auto" padding="around-small" size="10">
+				<lightning-card title="Cert Popularity will go here"></lightning-card>
+			</lightning-layout-item>
+		</template>
+
+	</lightning-layout>
+</template>

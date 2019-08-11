@@ -1,0 +1,14 @@
+<template>
+	<lightning-layout horizontal-align="space">
+		<lightning-layout-item padding="around-small" size="2">
+			<lightning-card title={viewMode}></lightning-card>
+			<c-aw-navigation onnavitemselected={handleNavItemSelected}></c-aw-navigation>
+		</lightning-layout-item>
+		<lightning-layout-item flexibility="auto" padding="around-small" size="6">
+			<c-student-browser></c-student-browser>
+		</lightning-layout-item>
+		<lightning-layout-item flexibility="auto" padding="around-small" size="4">
+			<c-student-detail></c-student-detail>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

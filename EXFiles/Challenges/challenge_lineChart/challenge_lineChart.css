@@ -1,0 +1,8 @@
+.chartTitleFont {
+	font-size: 1rem;
+}
+@media (min-width: 768px) {
+	.chartTitleFont {
+		font-size: 1.5rem;
+	}
+}

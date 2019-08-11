@@ -1,0 +1,14 @@
+<template>
+	<lightning-card title="Recent Worldwide Deliveries" icon-name="utility:world">
+		<ul class="slds-m-horizontal_medium">
+		<template for:each={deliveries.data} for:item="delivery">
+			<li key={delivery.Id}>
+				<strong>{delivery.Course__r.Name}</strong>
+				<BR /> 
+				{delivery.Location__c} on {delivery.Start_Date__c}
+				<BR /><BR />
+			</li>
+		</template>
+		</ul>
+	</lightning-card>
+</template>

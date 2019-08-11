@@ -1,0 +1,13 @@
+<template>
+	<lightning-card title={formTitle}>
+		<form class="slds-form_stacked slds-p-around_medium" >
+			
+			<!-- form controls go here-->
+
+			<div class="slds-text-align_center slds-m-top_medium" >
+				<lightning-button variant="brand" label="Save" onclick={onSave} class="slds-m-right_x-small"></lightning-button>
+				<lightning-button label="Cancel"></lightning-button>
+			</div>
+		</form>
+	</lightning-card>
+</template>
