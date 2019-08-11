@@ -1,0 +1,5 @@
+# Ignore these files...
+.sfdx/*
+.DS_Store
+.vscode/settings.json
+jsconfig.json
