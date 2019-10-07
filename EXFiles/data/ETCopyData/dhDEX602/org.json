@@ -1,5 +1,5 @@
 {
-	"now": "2019-04-28T21:57:02.176Z",
+	"now": "2019-10-07T11:02:21.331Z",
 	"alias": "dhDEX602",
 	"importOrder": [
 		"Account",
@@ -8,10 +8,10 @@
 		"Certification_Element__c",
 		"Contact",
 		"Course__c",
-		"Opportunity",
 		"Case",
 		"Certification_Held__c",
 		"Course_Delivery__c",
+		"Opportunity",
 		"CaseComment",
 		"Course_Attendee__c"
 	],
@@ -26,7 +26,7 @@
 				"Email",
 				"Id"
 			],
-			"describeUrl": "/services/data/v45.0/sobjects/User/describe"
+			"describeUrl": "/services/data/v46.0/sobjects/User/describe"
 		},
 		"Group": {
 			"Name": "Group",
@@ -36,7 +36,7 @@
 				"Id",
 				"DeveloperName"
 			],
-			"describeUrl": "/services/data/v45.0/sobjects/Group/describe"
+			"describeUrl": "/services/data/v46.0/sobjects/Group/describe"
 		},
 		"RecordType": {
 			"Name": "RecordType",
@@ -46,7 +46,7 @@
 				"Id",
 				"DeveloperName"
 			],
-			"describeUrl": "/services/data/v45.0/sobjects/RecordType/describe"
+			"describeUrl": "/services/data/v46.0/sobjects/RecordType/describe"
 		}
 	},
 	"sObjects": {
@@ -68,7 +68,7 @@
 					"sObj": "Opportunity"
 				}
 			],
-			"describeUrl": "/services/data/v45.0/sobjects/Account/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/Account/describe",
 			"fields": [
 				"AccountNumber",
 				"AccountSource",
@@ -127,7 +127,7 @@
 					"sObj": "CaseComment"
 				}
 			],
-			"describeUrl": "/services/data/v45.0/sobjects/Case/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/Case/describe",
 			"fields": [
 				"AccountId",
 				"Comments",
@@ -168,7 +168,7 @@
 		},
 		"CaseComment": {
 			"children": [],
-			"describeUrl": "/services/data/v45.0/sobjects/CaseComment/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/CaseComment/describe",
 			"fields": [
 				"CommentBody",
 				"Id",
@@ -195,7 +195,7 @@
 					"sObj": "Certification_Attempt__c"
 				}
 			],
-			"describeUrl": "/services/data/v45.0/sobjects/Certification_Element__c/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/Certification_Element__c/describe",
 			"fields": [
 				"Certification__c",
 				"Description__c",
@@ -217,7 +217,7 @@
 		},
 		"Certification_Held__c": {
 			"children": [],
-			"describeUrl": "/services/data/v45.0/sobjects/Certification_Held__c/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/Certification_Held__c/describe",
 			"fields": [
 				"Certification__c",
 				"Certified_Professional__c",
@@ -258,7 +258,7 @@
 					"sObj": "Course__c"
 				}
 			],
-			"describeUrl": "/services/data/v45.0/sobjects/Certification__c/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/Certification__c/describe",
 			"fields": [
 				"Certification_Description__c",
 				"Id",
@@ -293,9 +293,14 @@
 					"children": "Course_Attendees__r",
 					"parentId": "Student__c",
 					"sObj": "Course_Attendee__c"
+				},
+				{
+					"children": "Opportunities",
+					"parentId": "ContactId",
+					"sObj": "Opportunity"
 				}
 			],
-			"describeUrl": "/services/data/v45.0/sobjects/Contact/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/Contact/describe",
 			"fields": [
 				"AccountId",
 				"AssistantName",
@@ -354,7 +359,7 @@
 		},
 		"Course_Attendee__c": {
 			"children": [],
-			"describeUrl": "/services/data/v45.0/sobjects/Course_Attendee__c/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/Course_Attendee__c/describe",
 			"fields": [
 				"Course_Delivery__c",
 				"Id",
@@ -386,7 +391,7 @@
 					"sObj": "Course_Attendee__c"
 				}
 			],
-			"describeUrl": "/services/data/v45.0/sobjects/Course_Delivery__c/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/Course_Delivery__c/describe",
 			"fields": [
 				"Course__c",
 				"Id",
@@ -420,7 +425,7 @@
 					"sObj": "Course_Delivery__c"
 				}
 			],
-			"describeUrl": "/services/data/v45.0/sobjects/Course__c/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/Course__c/describe",
 			"fields": [
 				"Certification__c",
 				"Course_Description__c",
@@ -443,11 +448,12 @@
 		},
 		"Opportunity": {
 			"children": [],
-			"describeUrl": "/services/data/v45.0/sobjects/Opportunity/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/Opportunity/describe",
 			"fields": [
 				"AccountId",
 				"Amount",
 				"CloseDate",
+				"ContactId",
 				"Description",
 				"ForecastCategoryName",
 				"Id",
@@ -470,6 +476,10 @@
 					"sObj": "Account"
 				},
 				{
+					"parentId": "ContactId",
+					"sObj": "Contact"
+				},
+				{
 					"parentId": "RecordTypeId",
 					"sObj": "RecordType"
 				}
@@ -478,7 +488,7 @@
 		},
 		"TripReport__c": {
 			"children": [],
-			"describeUrl": "/services/data/v45.0/sobjects/TripReport__c/describe",
+			"describeUrl": "/services/data/v46.0/sobjects/TripReport__c/describe",
 			"fields": [
 				"Date__c",
 				"Id",
@@ -593,6 +603,7 @@
 		"ApexTestRunResult": [],
 		"ApexTestSuite": [],
 		"ApexTrigger": [],
+		"AppAnalyticsQueryRequest": [],
 		"AppDefinition": [],
 		"AppMenuItem": [],
 		"AppTabMember": [],
@@ -607,6 +618,8 @@
 		"AssetTokenEvent": [],
 		"AssignmentRule": [],
 		"AsyncApexJob": [],
+		"AsyncOperationEvent": [],
+		"AsyncOperationStatus": [],
 		"AttachedContentDocument": [],
 		"AttachedContentNote": [],
 		"Attachment": [],
@@ -618,6 +631,17 @@
 		"AuthConfigProviders": [],
 		"AuthProvider": [],
 		"AuthSession": [],
+		"AuthorizationForm": [],
+		"AuthorizationFormConsent": [],
+		"AuthorizationFormConsentHistory": [],
+		"AuthorizationFormConsentShare": [],
+		"AuthorizationFormDataUse": [],
+		"AuthorizationFormDataUseHistory": [],
+		"AuthorizationFormDataUseShare": [],
+		"AuthorizationFormHistory": [],
+		"AuthorizationFormShare": [],
+		"AuthorizationFormText": [],
+		"AuthorizationFormTextHistory": [],
 		"BackgroundOperation": [],
 		"BatchApexErrorEvent": [],
 		"BrandTemplate": [],
@@ -632,7 +656,9 @@
 		"CampaignFeed": [],
 		"CampaignHistory": [],
 		"CampaignMember": [],
+		"CampaignMemberChangeEvent": [],
 		"CampaignMemberStatus": [],
+		"CampaignMemberStatusChangeEvent": [],
 		"CampaignShare": [],
 		"Case": [
 			"AccountId",
@@ -660,6 +686,7 @@
 			"LastModifiedDate",
 			"LastReferencedDate",
 			"LastViewedDate",
+			"MasterRecordId",
 			"Origin",
 			"OwnerId",
 			"ParentId",
@@ -820,6 +847,7 @@
 			"HasOptedOutOfFax",
 			"HomePhone",
 			"Id",
+			"IndividualId",
 			"IsDeleted",
 			"IsEmailBounced",
 			"Jigsaw",
@@ -873,6 +901,8 @@
 		"ContactChangeEvent": [],
 		"ContactFeed": [],
 		"ContactHistory": [],
+		"ContactPointTypeConsent": [],
+		"ContactPointTypeConsentHistory": [],
 		"ContactRequest": [],
 		"ContactRequestShare": [],
 		"ContactShare": [],
@@ -889,6 +919,8 @@
 		"ContentFolderItem": [],
 		"ContentFolderLink": [],
 		"ContentFolderMember": [],
+		"ContentHubItem": [],
+		"ContentHubRepository": [],
 		"ContentNote": [],
 		"ContentNotification": [],
 		"ContentTagSubscription": [],
@@ -903,6 +935,7 @@
 		"ContentWorkspacePermission": [],
 		"ContentWorkspaceSubscription": [],
 		"Contract": [],
+		"ContractChangeEvent": [],
 		"ContractContactRole": [],
 		"ContractFeed": [],
 		"ContractHistory": [],
@@ -995,6 +1028,12 @@
 		"DataIntegrationRecordPurchasePermission": [],
 		"DataStatistics": [],
 		"DataType": [],
+		"DataUseLegalBasis": [],
+		"DataUseLegalBasisHistory": [],
+		"DataUseLegalBasisShare": [],
+		"DataUsePurpose": [],
+		"DataUsePurposeHistory": [],
+		"DataUsePurposeShare": [],
 		"DatacloudAddress": [],
 		"DatedConversionRate": [],
 		"DeclinedEventRelation": [],
@@ -1017,6 +1056,8 @@
 		"EmailTemplate": [],
 		"EmbeddedServiceDetail": [],
 		"EmbeddedServiceLabel": [],
+		"EnhancedLetterhead": [],
+		"EnhancedLetterheadFeed": [],
 		"EntityDefinition": [],
 		"EntityParticle": [],
 		"EntitySubscription": [],
@@ -1027,6 +1068,8 @@
 		"EventLogFile": [],
 		"EventRelation": [],
 		"EventRelationChangeEvent": [],
+		"ExpressionFilter": [],
+		"ExpressionFilterCriteria": [],
 		"ExternalDataSource": [],
 		"ExternalDataUserAuth": [],
 		"ExternalSocialAccount": [],
@@ -1041,13 +1084,17 @@
 		"FeedTrackedChange": [],
 		"FieldDefinition": [],
 		"FieldPermissions": [],
+		"FieldSecurityClassification": [],
 		"FileSearchActivity": [],
 		"FiscalYearSettings": [],
 		"FlexQueueItem": [],
+		"FlowDefinitionView": [],
 		"FlowInterview": [],
 		"FlowInterviewShare": [],
 		"FlowRecordRelation": [],
 		"FlowStageRelation": [],
+		"FlowVariableView": [],
+		"FlowVersionView": [],
 		"Folder": [],
 		"FolderedContentDocument": [],
 		"ForecastShare": [],
@@ -1063,6 +1110,9 @@
 		"IframeWhiteListUrl": [],
 		"Image": [],
 		"ImageShare": [],
+		"Individual": [],
+		"IndividualHistory": [],
+		"IndividualShare": [],
 		"InstalledMobileApp": [],
 		"KnowledgeableUser": [],
 		"Lead": [],
@@ -1089,6 +1139,7 @@
 		"LoginGeo": [],
 		"LoginHistory": [],
 		"LoginIp": [],
+		"LogoutEventStream": [],
 		"LookedUpFromActivity": [],
 		"Macro": [],
 		"MacroHistory": [],
@@ -1105,6 +1156,7 @@
 		"NamespaceRegistryHistory": [],
 		"Note": [],
 		"NoteAndAttachment": [],
+		"OauthCustomScope": [],
 		"OauthToken": [],
 		"ObjectPermissions": [],
 		"OnboardingMetrics": [],
@@ -1114,6 +1166,7 @@
 			"Amount",
 			"CampaignId",
 			"CloseDate",
+			"ContactId",
 			"ContractId",
 			"CreatedById",
 			"CreatedDate",
@@ -1187,6 +1240,7 @@
 		"PermissionSetAssignment": [],
 		"PermissionSetLicense": [],
 		"PermissionSetLicenseAssign": [],
+		"PermissionSetPortalDelegate": [],
 		"PermissionSetTabSetting": [],
 		"PicklistValueInfo": [],
 		"PlatformAction": [],
@@ -1208,6 +1262,10 @@
 		"Product2Feed": [],
 		"Product2History": [],
 		"Profile": [],
+		"Prompt": [],
+		"PromptAction": [],
+		"PromptActionShare": [],
+		"PromptVersion": [],
 		"Publisher": [],
 		"PushTopic": [],
 		"QueueSobject": [],
@@ -1349,6 +1407,143 @@
 			"CaseComment.IsDeleted": [
 				"Must be createable"
 			],
+			"Certification__c.OwnerId": [
+				"User asked for this field to be excluded",
+				"Reference, but it points to 0 or more than 1 sObject: | Group | User | "
+			],
+			"Certification__c.IsDeleted": [
+				"Must be createable"
+			],
+			"Certification__c.CurrencyIsoCode": [
+				"User asked for this field to be excluded"
+			],
+			"Certification__c.CreatedDate": [
+				"User asked for this field to be excluded",
+				"Must be createable"
+			],
+			"Certification__c.CreatedById": [
+				"Must be createable"
+			],
+			"Certification__c.LastModifiedDate": [
+				"Must be createable"
+			],
+			"Certification__c.LastModifiedById": [
+				"Must be createable"
+			],
+			"Certification__c.SystemModstamp": [
+				"Must be createable"
+			],
+			"Certification__c.LastActivityDate": [
+				"Must be createable"
+			],
+			"Certification__c.LastViewedDate": [
+				"Must be createable"
+			],
+			"Certification__c.LastReferencedDate": [
+				"Must be createable"
+			],
+			"Certification__c.Number_of_Certified_Professionals__c": [
+				"Can't be calculated",
+				"Must be createable"
+			],
+			"Certification_Held__c.IsDeleted": [
+				"Must be createable"
+			],
+			"Certification_Held__c.Name": [
+				"Can't be autoNumber",
+				"Must be createable"
+			],
+			"Certification_Held__c.CurrencyIsoCode": [
+				"User asked for this field to be excluded"
+			],
+			"Certification_Held__c.CreatedDate": [
+				"User asked for this field to be excluded",
+				"Must be createable"
+			],
+			"Certification_Held__c.CreatedById": [
+				"Must be createable"
+			],
+			"Certification_Held__c.LastModifiedDate": [
+				"Must be createable"
+			],
+			"Certification_Held__c.LastModifiedById": [
+				"Must be createable"
+			],
+			"Certification_Held__c.SystemModstamp": [
+				"Must be createable"
+			],
+			"Certification_Held__c.LastActivityDate": [
+				"Must be createable"
+			],
+			"Certification_Held__c.Certified_Professional_Name__c": [
+				"Can't be calculated",
+				"Must be createable"
+			],
+			"TripReport__c.OwnerId": [
+				"User asked for this field to be excluded",
+				"Reference, but it points to 0 or more than 1 sObject: | Group | User | "
+			],
+			"TripReport__c.IsDeleted": [
+				"Must be createable"
+			],
+			"TripReport__c.CurrencyIsoCode": [
+				"User asked for this field to be excluded"
+			],
+			"TripReport__c.CreatedDate": [
+				"User asked for this field to be excluded",
+				"Must be createable"
+			],
+			"TripReport__c.CreatedById": [
+				"Must be createable"
+			],
+			"TripReport__c.LastModifiedDate": [
+				"Must be createable"
+			],
+			"TripReport__c.LastModifiedById": [
+				"Must be createable"
+			],
+			"TripReport__c.SystemModstamp": [
+				"Must be createable"
+			],
+			"TripReport__c.LastViewedDate": [
+				"Must be createable"
+			],
+			"TripReport__c.LastReferencedDate": [
+				"Must be createable"
+			],
+			"Course_Attendee__c.IsDeleted": [
+				"Must be createable"
+			],
+			"Course_Attendee__c.Name": [
+				"Can't be autoNumber",
+				"Must be createable"
+			],
+			"Course_Attendee__c.CurrencyIsoCode": [
+				"User asked for this field to be excluded"
+			],
+			"Course_Attendee__c.CreatedDate": [
+				"User asked for this field to be excluded",
+				"Must be createable"
+			],
+			"Course_Attendee__c.CreatedById": [
+				"Must be createable"
+			],
+			"Course_Attendee__c.LastModifiedDate": [
+				"Must be createable"
+			],
+			"Course_Attendee__c.LastModifiedById": [
+				"Must be createable"
+			],
+			"Course_Attendee__c.SystemModstamp": [
+				"Must be createable"
+			],
+			"Course_Attendee__c.LastActivityDate": [
+				"Must be createable"
+			],
+			"Course_Attendee__c.Student_Name__c": [
+				"Can't be calculated",
+				"Must be createable"
+			],
 			"Course_Delivery__c.IsDeleted": [
 				"Must be createable"
 			],
@@ -1388,57 +1583,68 @@
 				"Can't be calculated",
 				"Must be createable"
 			],
-			"Account.IsDeleted": [
+			"Certification_Element__c.IsDeleted": [
 				"Must be createable"
 			],
-			"Account.MasterRecordId": [
-				"Must be createable",
-				"Current version does not allow recursive parenting"
-			],
-			"Account.ParentId": [
-				"Current version does not allow recursive parenting"
-			],
-			"Account.BillingAddress": [
-				"Must be createable"
-			],
-			"Account.ShippingAddress": [
-				"Must be createable"
-			],
-			"Account.PhotoUrl": [
-				"Must be createable"
-			],
-			"Account.CurrencyIsoCode": [
+			"Certification_Element__c.CurrencyIsoCode": [
 				"User asked for this field to be excluded"
 			],
-			"Account.OwnerId": [
-				"User asked for this field to be excluded"
-			],
-			"Account.CreatedDate": [
+			"Certification_Element__c.CreatedDate": [
 				"User asked for this field to be excluded",
 				"Must be createable"
 			],
-			"Account.CreatedById": [
+			"Certification_Element__c.CreatedById": [
 				"Must be createable"
 			],
-			"Account.LastModifiedDate": [
+			"Certification_Element__c.LastModifiedDate": [
 				"Must be createable"
 			],
-			"Account.LastModifiedById": [
+			"Certification_Element__c.LastModifiedById": [
 				"Must be createable"
 			],
-			"Account.SystemModstamp": [
+			"Certification_Element__c.SystemModstamp": [
 				"Must be createable"
 			],
-			"Account.LastActivityDate": [
+			"Certification_Element__c.LastActivityDate": [
 				"Must be createable"
 			],
-			"Account.LastViewedDate": [
+			"Course__c.OwnerId": [
+				"User asked for this field to be excluded",
+				"Reference, but it points to 0 or more than 1 sObject: | Group | User | "
+			],
+			"Course__c.IsDeleted": [
 				"Must be createable"
 			],
-			"Account.LastReferencedDate": [
+			"Course__c.CurrencyIsoCode": [
+				"User asked for this field to be excluded"
+			],
+			"Course__c.CreatedDate": [
+				"User asked for this field to be excluded",
 				"Must be createable"
 			],
-			"Account.JigsawCompanyId": [
+			"Course__c.CreatedById": [
+				"Must be createable"
+			],
+			"Course__c.LastModifiedDate": [
+				"Must be createable"
+			],
+			"Course__c.LastModifiedById": [
+				"Must be createable"
+			],
+			"Course__c.SystemModstamp": [
+				"Must be createable"
+			],
+			"Course__c.LastActivityDate": [
+				"Must be createable"
+			],
+			"Course__c.LastViewedDate": [
+				"Must be createable"
+			],
+			"Course__c.LastReferencedDate": [
+				"Must be createable"
+			],
+			"Course__c.Number_of_Courses_Delivered__c": [
+				"Can't be calculated",
 				"Must be createable"
 			],
 			"Certification_Attempt__c.OwnerId": [
@@ -1472,141 +1678,6 @@
 				"Must be createable"
 			],
 			"Certification_Attempt__c.LastActivityDate": [
-				"Must be createable"
-			],
-			"Certification_Held__c.IsDeleted": [
-				"Must be createable"
-			],
-			"Certification_Held__c.Name": [
-				"Can't be autoNumber",
-				"Must be createable"
-			],
-			"Certification_Held__c.CurrencyIsoCode": [
-				"User asked for this field to be excluded"
-			],
-			"Certification_Held__c.CreatedDate": [
-				"User asked for this field to be excluded",
-				"Must be createable"
-			],
-			"Certification_Held__c.CreatedById": [
-				"Must be createable"
-			],
-			"Certification_Held__c.LastModifiedDate": [
-				"Must be createable"
-			],
-			"Certification_Held__c.LastModifiedById": [
-				"Must be createable"
-			],
-			"Certification_Held__c.SystemModstamp": [
-				"Must be createable"
-			],
-			"Certification_Held__c.LastActivityDate": [
-				"Must be createable"
-			],
-			"Certification_Held__c.Certified_Professional_Name__c": [
-				"Can't be calculated",
-				"Must be createable"
-			],
-			"Course_Attendee__c.IsDeleted": [
-				"Must be createable"
-			],
-			"Course_Attendee__c.Name": [
-				"Can't be autoNumber",
-				"Must be createable"
-			],
-			"Course_Attendee__c.CurrencyIsoCode": [
-				"User asked for this field to be excluded"
-			],
-			"Course_Attendee__c.CreatedDate": [
-				"User asked for this field to be excluded",
-				"Must be createable"
-			],
-			"Course_Attendee__c.CreatedById": [
-				"Must be createable"
-			],
-			"Course_Attendee__c.LastModifiedDate": [
-				"Must be createable"
-			],
-			"Course_Attendee__c.LastModifiedById": [
-				"Must be createable"
-			],
-			"Course_Attendee__c.SystemModstamp": [
-				"Must be createable"
-			],
-			"Course_Attendee__c.LastActivityDate": [
-				"Must be createable"
-			],
-			"Course_Attendee__c.Student_Name__c": [
-				"Can't be calculated",
-				"Must be createable"
-			],
-			"Contact.IsDeleted": [
-				"Must be createable"
-			],
-			"Contact.MasterRecordId": [
-				"Must be createable",
-				"Current version does not allow recursive parenting"
-			],
-			"Contact.Name": [
-				"Must be createable"
-			],
-			"Contact.OtherAddress": [
-				"Must be createable"
-			],
-			"Contact.MailingAddress": [
-				"Must be createable"
-			],
-			"Contact.ReportsToId": [
-				"Current version does not allow recursive parenting"
-			],
-			"Contact.CurrencyIsoCode": [
-				"User asked for this field to be excluded"
-			],
-			"Contact.OwnerId": [
-				"User asked for this field to be excluded"
-			],
-			"Contact.CreatedDate": [
-				"User asked for this field to be excluded",
-				"Must be createable"
-			],
-			"Contact.CreatedById": [
-				"Must be createable"
-			],
-			"Contact.LastModifiedDate": [
-				"Must be createable"
-			],
-			"Contact.LastModifiedById": [
-				"Must be createable"
-			],
-			"Contact.SystemModstamp": [
-				"Must be createable"
-			],
-			"Contact.LastActivityDate": [
-				"Must be createable"
-			],
-			"Contact.LastCURequestDate": [
-				"Must be createable"
-			],
-			"Contact.LastCUUpdateDate": [
-				"Must be createable"
-			],
-			"Contact.LastViewedDate": [
-				"Must be createable"
-			],
-			"Contact.LastReferencedDate": [
-				"Must be createable"
-			],
-			"Contact.IsEmailBounced": [
-				"Must be createable"
-			],
-			"Contact.PhotoUrl": [
-				"Must be createable"
-			],
-			"Contact.JigsawContactId": [
-				"Must be createable"
-			],
-			"Contact.Number_of_Certifications_Held__c": [
-				"Can't be calculated",
 				"Must be createable"
 			],
 			"Opportunity.IsDeleted": [
@@ -1682,104 +1753,12 @@
 			"Opportunity.HasOverdueTask": [
 				"Must be createable"
 			],
-			"TripReport__c.OwnerId": [
-				"User asked for this field to be excluded",
-				"Reference, but it points to 0 or more than 1 sObject: | Group | User | "
-			],
-			"TripReport__c.IsDeleted": [
-				"Must be createable"
-			],
-			"TripReport__c.CurrencyIsoCode": [
-				"User asked for this field to be excluded"
-			],
-			"TripReport__c.CreatedDate": [
-				"User asked for this field to be excluded",
-				"Must be createable"
-			],
-			"TripReport__c.CreatedById": [
-				"Must be createable"
-			],
-			"TripReport__c.LastModifiedDate": [
-				"Must be createable"
-			],
-			"TripReport__c.LastModifiedById": [
-				"Must be createable"
-			],
-			"TripReport__c.SystemModstamp": [
-				"Must be createable"
-			],
-			"TripReport__c.LastViewedDate": [
-				"Must be createable"
-			],
-			"TripReport__c.LastReferencedDate": [
-				"Must be createable"
-			],
-			"Certification__c.OwnerId": [
-				"User asked for this field to be excluded",
-				"Reference, but it points to 0 or more than 1 sObject: | Group | User | "
-			],
-			"Certification__c.IsDeleted": [
-				"Must be createable"
-			],
-			"Certification__c.CurrencyIsoCode": [
-				"User asked for this field to be excluded"
-			],
-			"Certification__c.CreatedDate": [
-				"User asked for this field to be excluded",
-				"Must be createable"
-			],
-			"Certification__c.CreatedById": [
-				"Must be createable"
-			],
-			"Certification__c.LastModifiedDate": [
-				"Must be createable"
-			],
-			"Certification__c.LastModifiedById": [
-				"Must be createable"
-			],
-			"Certification__c.SystemModstamp": [
-				"Must be createable"
-			],
-			"Certification__c.LastActivityDate": [
-				"Must be createable"
-			],
-			"Certification__c.LastViewedDate": [
-				"Must be createable"
-			],
-			"Certification__c.LastReferencedDate": [
-				"Must be createable"
-			],
-			"Certification__c.Number_of_Certified_Professionals__c": [
-				"Can't be calculated",
-				"Must be createable"
-			],
-			"Certification_Element__c.IsDeleted": [
-				"Must be createable"
-			],
-			"Certification_Element__c.CurrencyIsoCode": [
-				"User asked for this field to be excluded"
-			],
-			"Certification_Element__c.CreatedDate": [
-				"User asked for this field to be excluded",
-				"Must be createable"
-			],
-			"Certification_Element__c.CreatedById": [
-				"Must be createable"
-			],
-			"Certification_Element__c.LastModifiedDate": [
-				"Must be createable"
-			],
-			"Certification_Element__c.LastModifiedById": [
-				"Must be createable"
-			],
-			"Certification_Element__c.SystemModstamp": [
-				"Must be createable"
-			],
-			"Certification_Element__c.LastActivityDate": [
-				"Must be createable"
-			],
 			"Case.IsDeleted": [
 				"Must be createable"
+			],
+			"Case.MasterRecordId": [
+				"Must be createable",
+				"Current version does not allow recursive parenting"
 			],
 			"Case.CaseNumber": [
 				"Can't be autoNumber",
@@ -1847,47 +1826,487 @@
 			"Case.LastReferencedDate": [
 				"Must be createable"
 			],
-			"Course__c.OwnerId": [
-				"User asked for this field to be excluded",
-				"Reference, but it points to 0 or more than 1 sObject: | Group | User | "
-			],
-			"Course__c.IsDeleted": [
+			"Contact.IsDeleted": [
 				"Must be createable"
 			],
-			"Course__c.CurrencyIsoCode": [
+			"Contact.MasterRecordId": [
+				"Must be createable",
+				"Current version does not allow recursive parenting"
+			],
+			"Contact.Name": [
+				"Must be createable"
+			],
+			"Contact.OtherAddress": [
+				"Must be createable"
+			],
+			"Contact.MailingAddress": [
+				"Must be createable"
+			],
+			"Contact.ReportsToId": [
+				"Current version does not allow recursive parenting"
+			],
+			"Contact.CurrencyIsoCode": [
 				"User asked for this field to be excluded"
 			],
-			"Course__c.CreatedDate": [
+			"Contact.OwnerId": [
+				"User asked for this field to be excluded"
+			],
+			"Contact.CreatedDate": [
 				"User asked for this field to be excluded",
 				"Must be createable"
 			],
-			"Course__c.CreatedById": [
+			"Contact.CreatedById": [
 				"Must be createable"
 			],
-			"Course__c.LastModifiedDate": [
+			"Contact.LastModifiedDate": [
 				"Must be createable"
 			],
-			"Course__c.LastModifiedById": [
+			"Contact.LastModifiedById": [
 				"Must be createable"
 			],
-			"Course__c.SystemModstamp": [
+			"Contact.SystemModstamp": [
 				"Must be createable"
 			],
-			"Course__c.LastActivityDate": [
+			"Contact.LastActivityDate": [
 				"Must be createable"
 			],
-			"Course__c.LastViewedDate": [
+			"Contact.LastCURequestDate": [
 				"Must be createable"
 			],
-			"Course__c.LastReferencedDate": [
+			"Contact.LastCUUpdateDate": [
 				"Must be createable"
 			],
-			"Course__c.Number_of_Courses_Delivered__c": [
+			"Contact.LastViewedDate": [
+				"Must be createable"
+			],
+			"Contact.LastReferencedDate": [
+				"Must be createable"
+			],
+			"Contact.IsEmailBounced": [
+				"Must be createable"
+			],
+			"Contact.PhotoUrl": [
+				"Must be createable"
+			],
+			"Contact.JigsawContactId": [
+				"Must be createable"
+			],
+			"Contact.IndividualId": [
+				"Parent sObject [Individual] is not processed"
+			],
+			"Contact.Number_of_Certifications_Held__c": [
 				"Can't be calculated",
+				"Must be createable"
+			],
+			"Account.IsDeleted": [
+				"Must be createable"
+			],
+			"Account.MasterRecordId": [
+				"Must be createable",
+				"Current version does not allow recursive parenting"
+			],
+			"Account.ParentId": [
+				"Current version does not allow recursive parenting"
+			],
+			"Account.BillingAddress": [
+				"Must be createable"
+			],
+			"Account.ShippingAddress": [
+				"Must be createable"
+			],
+			"Account.PhotoUrl": [
+				"Must be createable"
+			],
+			"Account.CurrencyIsoCode": [
+				"User asked for this field to be excluded"
+			],
+			"Account.OwnerId": [
+				"User asked for this field to be excluded"
+			],
+			"Account.CreatedDate": [
+				"User asked for this field to be excluded",
+				"Must be createable"
+			],
+			"Account.CreatedById": [
+				"Must be createable"
+			],
+			"Account.LastModifiedDate": [
+				"Must be createable"
+			],
+			"Account.LastModifiedById": [
+				"Must be createable"
+			],
+			"Account.SystemModstamp": [
+				"Must be createable"
+			],
+			"Account.LastActivityDate": [
+				"Must be createable"
+			],
+			"Account.LastViewedDate": [
+				"Must be createable"
+			],
+			"Account.LastReferencedDate": [
+				"Must be createable"
+			],
+			"Account.JigsawCompanyId": [
 				"Must be createable"
 			]
 		},
 		"ADD_CHILD": {
+			"Certification__c.ActivityHistories => ActivityHistory": [
+				"Child sObject [ActivityHistory] is not processed"
+			],
+			"Certification__c.AttachedContentDocuments => AttachedContentDocument": [
+				"Child sObject [AttachedContentDocument] is not processed"
+			],
+			"Certification__c.AttachedContentNotes => AttachedContentNote": [
+				"Child sObject [AttachedContentNote] is not processed"
+			],
+			"Certification__c.Attachments => Attachment": [
+				"Child sObject [Attachment] is not processed"
+			],
+			"Certification__c.Histories => Certification__History": [
+				"Child sObject [Certification__History] is not processed"
+			],
+			"Certification__c.Shares => Certification__Share": [
+				"Child sObject [Certification__Share] is not processed"
+			],
+			"Certification__c.RecordAssociatedGroups => CollaborationGroupRecord": [
+				"Child sObject [CollaborationGroupRecord] is not processed"
+			],
+			"Certification__c.CombinedAttachments => CombinedAttachment": [
+				"Child sObject [CombinedAttachment] is not processed"
+			],
+			"Certification__c.ContactRequests => ContactRequest": [
+				"Child sObject [ContactRequest] is not processed"
+			],
+			"Certification__c.null => ContentDistribution": [
+				"Child sObject [ContentDistribution] is not processed"
+			],
+			"Certification__c.ContentDocumentLinks => ContentDocumentLink": [
+				"Child sObject [ContentDocumentLink] is not processed"
+			],
+			"Certification__c.null => ContentVersion": [
+				"Child sObject [ContentVersion] is not processed"
+			],
+			"Certification__c.DuplicateRecordItems => DuplicateRecordItem": [
+				"Child sObject [DuplicateRecordItem] is not processed"
+			],
+			"Certification__c.Emails => EmailMessage": [
+				"Child sObject [EmailMessage] is not processed"
+			],
+			"Certification__c.FeedSubscriptionsForEntity => EntitySubscription": [
+				"Child sObject [EntitySubscription] is not processed"
+			],
+			"Certification__c.Events => Event": [
+				"Child sObject [Event] is not processed"
+			],
+			"Certification__c.null => EventChangeEvent": [
+				"Child sObject [EventChangeEvent] is not processed"
+			],
+			"Certification__c.null => EventRelationChangeEvent": [
+				"Child sObject [EventRelationChangeEvent] is not processed"
+			],
+			"Certification__c.null => FeedComment": [
+				"Child sObject [FeedComment] is not processed"
+			],
+			"Certification__c.null => FeedItem": [
+				"Child sObject [FeedItem] is not processed"
+			],
+			"Certification__c.null => FlowRecordRelation": [
+				"Child sObject [FlowRecordRelation] is not processed"
+			],
+			"Certification__c.Notes => Note": [
+				"Child sObject [Note] is not processed"
+			],
+			"Certification__c.NotesAndAttachments => NoteAndAttachment": [
+				"Child sObject [NoteAndAttachment] is not processed"
+			],
+			"Certification__c.OpenActivities => OpenActivity": [
+				"Child sObject [OpenActivity] is not processed"
+			],
+			"Certification__c.null => OutgoingEmail": [
+				"Child sObject [OutgoingEmail] is not processed"
+			],
+			"Certification__c.ProcessInstances => ProcessInstance": [
+				"Child sObject [ProcessInstance] is not processed"
+			],
+			"Certification__c.ProcessSteps => ProcessInstanceHistory": [
+				"Child sObject [ProcessInstanceHistory] is not processed"
+			],
+			"Certification__c.RecordActions => RecordAction": [
+				"Child sObject [RecordAction] is not processed"
+			],
+			"Certification__c.RecordActionHistories => RecordActionHistory": [
+				"Child sObject [RecordActionHistory] is not processed"
+			],
+			"Certification__c.Tasks => Task": [
+				"Child sObject [Task] is not processed"
+			],
+			"Certification__c.null => TaskChangeEvent": [
+				"Child sObject [TaskChangeEvent] is not processed"
+			],
+			"Certification__c.TopicAssignments => TopicAssignment": [
+				"Child sObject [TopicAssignment] is not processed"
+			],
+			"Certification_Held__c.ActivityHistories => ActivityHistory": [
+				"Child sObject [ActivityHistory] is not processed"
+			],
+			"Certification_Held__c.AttachedContentDocuments => AttachedContentDocument": [
+				"Child sObject [AttachedContentDocument] is not processed"
+			],
+			"Certification_Held__c.AttachedContentNotes => AttachedContentNote": [
+				"Child sObject [AttachedContentNote] is not processed"
+			],
+			"Certification_Held__c.Attachments => Attachment": [
+				"Child sObject [Attachment] is not processed"
+			],
+			"Certification_Held__c.Histories => Certification_Held__History": [
+				"Child sObject [Certification_Held__History] is not processed"
+			],
+			"Certification_Held__c.RecordAssociatedGroups => CollaborationGroupRecord": [
+				"Child sObject [CollaborationGroupRecord] is not processed"
+			],
+			"Certification_Held__c.CombinedAttachments => CombinedAttachment": [
+				"Child sObject [CombinedAttachment] is not processed"
+			],
+			"Certification_Held__c.ContactRequests => ContactRequest": [
+				"Child sObject [ContactRequest] is not processed"
+			],
+			"Certification_Held__c.null => ContentDistribution": [
+				"Child sObject [ContentDistribution] is not processed"
+			],
+			"Certification_Held__c.ContentDocumentLinks => ContentDocumentLink": [
+				"Child sObject [ContentDocumentLink] is not processed"
+			],
+			"Certification_Held__c.null => ContentVersion": [
+				"Child sObject [ContentVersion] is not processed"
+			],
+			"Certification_Held__c.DuplicateRecordItems => DuplicateRecordItem": [
+				"Child sObject [DuplicateRecordItem] is not processed"
+			],
+			"Certification_Held__c.Emails => EmailMessage": [
+				"Child sObject [EmailMessage] is not processed"
+			],
+			"Certification_Held__c.FeedSubscriptionsForEntity => EntitySubscription": [
+				"Child sObject [EntitySubscription] is not processed"
+			],
+			"Certification_Held__c.Events => Event": [
+				"Child sObject [Event] is not processed"
+			],
+			"Certification_Held__c.null => EventChangeEvent": [
+				"Child sObject [EventChangeEvent] is not processed"
+			],
+			"Certification_Held__c.null => EventRelationChangeEvent": [
+				"Child sObject [EventRelationChangeEvent] is not processed"
+			],
+			"Certification_Held__c.null => FeedComment": [
+				"Child sObject [FeedComment] is not processed"
+			],
+			"Certification_Held__c.null => FeedItem": [
+				"Child sObject [FeedItem] is not processed"
+			],
+			"Certification_Held__c.null => FlowRecordRelation": [
+				"Child sObject [FlowRecordRelation] is not processed"
+			],
+			"Certification_Held__c.Notes => Note": [
+				"Child sObject [Note] is not processed"
+			],
+			"Certification_Held__c.NotesAndAttachments => NoteAndAttachment": [
+				"Child sObject [NoteAndAttachment] is not processed"
+			],
+			"Certification_Held__c.OpenActivities => OpenActivity": [
+				"Child sObject [OpenActivity] is not processed"
+			],
+			"Certification_Held__c.null => OutgoingEmail": [
+				"Child sObject [OutgoingEmail] is not processed"
+			],
+			"Certification_Held__c.ProcessInstances => ProcessInstance": [
+				"Child sObject [ProcessInstance] is not processed"
+			],
+			"Certification_Held__c.ProcessSteps => ProcessInstanceHistory": [
+				"Child sObject [ProcessInstanceHistory] is not processed"
+			],
+			"Certification_Held__c.RecordActions => RecordAction": [
+				"Child sObject [RecordAction] is not processed"
+			],
+			"Certification_Held__c.RecordActionHistories => RecordActionHistory": [
+				"Child sObject [RecordActionHistory] is not processed"
+			],
+			"Certification_Held__c.Tasks => Task": [
+				"Child sObject [Task] is not processed"
+			],
+			"Certification_Held__c.null => TaskChangeEvent": [
+				"Child sObject [TaskChangeEvent] is not processed"
+			],
+			"Certification_Held__c.TopicAssignments => TopicAssignment": [
+				"Child sObject [TopicAssignment] is not processed"
+			],
+			"TripReport__c.AttachedContentDocuments => AttachedContentDocument": [
+				"Child sObject [AttachedContentDocument] is not processed"
+			],
+			"TripReport__c.AttachedContentNotes => AttachedContentNote": [
+				"Child sObject [AttachedContentNote] is not processed"
+			],
+			"TripReport__c.Attachments => Attachment": [
+				"Child sObject [Attachment] is not processed"
+			],
+			"TripReport__c.RecordAssociatedGroups => CollaborationGroupRecord": [
+				"Child sObject [CollaborationGroupRecord] is not processed"
+			],
+			"TripReport__c.CombinedAttachments => CombinedAttachment": [
+				"Child sObject [CombinedAttachment] is not processed"
+			],
+			"TripReport__c.ContactRequests => ContactRequest": [
+				"Child sObject [ContactRequest] is not processed"
+			],
+			"TripReport__c.null => ContentDistribution": [
+				"Child sObject [ContentDistribution] is not processed"
+			],
+			"TripReport__c.ContentDocumentLinks => ContentDocumentLink": [
+				"Child sObject [ContentDocumentLink] is not processed"
+			],
+			"TripReport__c.null => ContentVersion": [
+				"Child sObject [ContentVersion] is not processed"
+			],
+			"TripReport__c.DuplicateRecordItems => DuplicateRecordItem": [
+				"Child sObject [DuplicateRecordItem] is not processed"
+			],
+			"TripReport__c.FeedSubscriptionsForEntity => EntitySubscription": [
+				"Child sObject [EntitySubscription] is not processed"
+			],
+			"TripReport__c.null => EventChangeEvent": [
+				"Child sObject [EventChangeEvent] is not processed"
+			],
+			"TripReport__c.null => EventRelationChangeEvent": [
+				"Child sObject [EventRelationChangeEvent] is not processed"
+			],
+			"TripReport__c.null => FeedComment": [
+				"Child sObject [FeedComment] is not processed"
+			],
+			"TripReport__c.null => FeedItem": [
+				"Child sObject [FeedItem] is not processed"
+			],
+			"TripReport__c.null => FlowRecordRelation": [
+				"Child sObject [FlowRecordRelation] is not processed"
+			],
+			"TripReport__c.Notes => Note": [
+				"Child sObject [Note] is not processed"
+			],
+			"TripReport__c.NotesAndAttachments => NoteAndAttachment": [
+				"Child sObject [NoteAndAttachment] is not processed"
+			],
+			"TripReport__c.ProcessInstances => ProcessInstance": [
+				"Child sObject [ProcessInstance] is not processed"
+			],
+			"TripReport__c.ProcessSteps => ProcessInstanceHistory": [
+				"Child sObject [ProcessInstanceHistory] is not processed"
+			],
+			"TripReport__c.RecordActions => RecordAction": [
+				"Child sObject [RecordAction] is not processed"
+			],
+			"TripReport__c.RecordActionHistories => RecordActionHistory": [
+				"Child sObject [RecordActionHistory] is not processed"
+			],
+			"TripReport__c.null => TaskChangeEvent": [
+				"Child sObject [TaskChangeEvent] is not processed"
+			],
+			"TripReport__c.TopicAssignments => TopicAssignment": [
+				"Child sObject [TopicAssignment] is not processed"
+			],
+			"Course_Attendee__c.ActivityHistories => ActivityHistory": [
+				"Child sObject [ActivityHistory] is not processed"
+			],
+			"Course_Attendee__c.AttachedContentDocuments => AttachedContentDocument": [
+				"Child sObject [AttachedContentDocument] is not processed"
+			],
+			"Course_Attendee__c.AttachedContentNotes => AttachedContentNote": [
+				"Child sObject [AttachedContentNote] is not processed"
+			],
+			"Course_Attendee__c.Attachments => Attachment": [
+				"Child sObject [Attachment] is not processed"
+			],
+			"Course_Attendee__c.RecordAssociatedGroups => CollaborationGroupRecord": [
+				"Child sObject [CollaborationGroupRecord] is not processed"
+			],
+			"Course_Attendee__c.CombinedAttachments => CombinedAttachment": [
+				"Child sObject [CombinedAttachment] is not processed"
+			],
+			"Course_Attendee__c.ContactRequests => ContactRequest": [
+				"Child sObject [ContactRequest] is not processed"
+			],
+			"Course_Attendee__c.null => ContentDistribution": [
+				"Child sObject [ContentDistribution] is not processed"
+			],
+			"Course_Attendee__c.ContentDocumentLinks => ContentDocumentLink": [
+				"Child sObject [ContentDocumentLink] is not processed"
+			],
+			"Course_Attendee__c.null => ContentVersion": [
+				"Child sObject [ContentVersion] is not processed"
+			],
+			"Course_Attendee__c.Histories => Course_Attendee__History": [
+				"Child sObject [Course_Attendee__History] is not processed"
+			],
+			"Course_Attendee__c.DuplicateRecordItems => DuplicateRecordItem": [
+				"Child sObject [DuplicateRecordItem] is not processed"
+			],
+			"Course_Attendee__c.Emails => EmailMessage": [
+				"Child sObject [EmailMessage] is not processed"
+			],
+			"Course_Attendee__c.FeedSubscriptionsForEntity => EntitySubscription": [
+				"Child sObject [EntitySubscription] is not processed"
+			],
+			"Course_Attendee__c.Events => Event": [
+				"Child sObject [Event] is not processed"
+			],
+			"Course_Attendee__c.null => EventChangeEvent": [
+				"Child sObject [EventChangeEvent] is not processed"
+			],
+			"Course_Attendee__c.null => EventRelationChangeEvent": [
+				"Child sObject [EventRelationChangeEvent] is not processed"
+			],
+			"Course_Attendee__c.null => FeedComment": [
+				"Child sObject [FeedComment] is not processed"
+			],
+			"Course_Attendee__c.null => FeedItem": [
+				"Child sObject [FeedItem] is not processed"
+			],
+			"Course_Attendee__c.null => FlowRecordRelation": [
+				"Child sObject [FlowRecordRelation] is not processed"
+			],
+			"Course_Attendee__c.Notes => Note": [
+				"Child sObject [Note] is not processed"
+			],
+			"Course_Attendee__c.NotesAndAttachments => NoteAndAttachment": [
+				"Child sObject [NoteAndAttachment] is not processed"
+			],
+			"Course_Attendee__c.OpenActivities => OpenActivity": [
+				"Child sObject [OpenActivity] is not processed"
+			],
+			"Course_Attendee__c.null => OutgoingEmail": [
+				"Child sObject [OutgoingEmail] is not processed"
+			],
+			"Course_Attendee__c.ProcessInstances => ProcessInstance": [
+				"Child sObject [ProcessInstance] is not processed"
+			],
+			"Course_Attendee__c.ProcessSteps => ProcessInstanceHistory": [
+				"Child sObject [ProcessInstanceHistory] is not processed"
+			],
+			"Course_Attendee__c.RecordActions => RecordAction": [
+				"Child sObject [RecordAction] is not processed"
+			],
+			"Course_Attendee__c.RecordActionHistories => RecordActionHistory": [
+				"Child sObject [RecordActionHistory] is not processed"
+			],
+			"Course_Attendee__c.Tasks => Task": [
+				"Child sObject [Task] is not processed"
+			],
+			"Course_Attendee__c.null => TaskChangeEvent": [
+				"Child sObject [TaskChangeEvent] is not processed"
+			],
+			"Course_Attendee__c.TopicAssignments => TopicAssignment": [
+				"Child sObject [TopicAssignment] is not processed"
+			],
 			"Course_Delivery__c.ActivityHistories => ActivityHistory": [
 				"Child sObject [ActivityHistory] is not processed"
 			],
@@ -1981,188 +2400,194 @@
 			"Course_Delivery__c.TopicAssignments => TopicAssignment": [
 				"Child sObject [TopicAssignment] is not processed"
 			],
-			"Account.ChildAccounts => Account": [
-				"Current version does not allow recursive parenting"
-			],
-			"Account.null => AccountChangeEvent": [
-				"Child sObject [AccountChangeEvent] is not processed"
-			],
-			"Account.AccountContactRoles => AccountContactRole": [
-				"Child sObject [AccountContactRole] is not processed"
-			],
-			"Account.null => AccountContactRoleChangeEvent": [
-				"Child sObject [AccountContactRoleChangeEvent] is not processed"
-			],
-			"Account.Feeds => AccountFeed": [
-				"Child sObject [AccountFeed] is not processed"
-			],
-			"Account.Histories => AccountHistory": [
-				"Child sObject [AccountHistory] is not processed"
-			],
-			"Account.AccountPartnersFrom => AccountPartner": [
-				"Child sObject [AccountPartner] is not processed"
-			],
-			"Account.AccountPartnersTo => AccountPartner": [
-				"Child sObject [AccountPartner] is not processed"
-			],
-			"Account.Shares => AccountShare": [
-				"Child sObject [AccountShare] is not processed"
-			],
-			"Account.ActivityHistories => ActivityHistory": [
+			"Certification_Element__c.ActivityHistories => ActivityHistory": [
 				"Child sObject [ActivityHistory] is not processed"
 			],
-			"Account.Assets => Asset": [
-				"Child sObject [Asset] is not processed"
-			],
-			"Account.ProvidedAssets => Asset": [
-				"Child sObject [Asset] is not processed"
-			],
-			"Account.ServicedAssets => Asset": [
-				"Child sObject [Asset] is not processed"
-			],
-			"Account.null => AssetChangeEvent": [
-				"Child sObject [AssetChangeEvent] is not processed"
-			],
-			"Account.AttachedContentDocuments => AttachedContentDocument": [
+			"Certification_Element__c.AttachedContentDocuments => AttachedContentDocument": [
 				"Child sObject [AttachedContentDocument] is not processed"
 			],
-			"Account.AttachedContentNotes => AttachedContentNote": [
+			"Certification_Element__c.AttachedContentNotes => AttachedContentNote": [
 				"Child sObject [AttachedContentNote] is not processed"
 			],
-			"Account.Attachments => Attachment": [
+			"Certification_Element__c.Attachments => Attachment": [
 				"Child sObject [Attachment] is not processed"
 			],
-			"Account.null => CaseChangeEvent": [
-				"Child sObject [CaseChangeEvent] is not processed"
+			"Certification_Element__c.Histories => Certification_Element__History": [
+				"Child sObject [Certification_Element__History] is not processed"
 			],
-			"Account.RecordAssociatedGroups => CollaborationGroupRecord": [
+			"Certification_Element__c.RecordAssociatedGroups => CollaborationGroupRecord": [
 				"Child sObject [CollaborationGroupRecord] is not processed"
 			],
-			"Account.CombinedAttachments => CombinedAttachment": [
+			"Certification_Element__c.CombinedAttachments => CombinedAttachment": [
 				"Child sObject [CombinedAttachment] is not processed"
 			],
-			"Account.null => ContactChangeEvent": [
-				"Child sObject [ContactChangeEvent] is not processed"
-			],
-			"Account.ContactRequests => ContactRequest": [
+			"Certification_Element__c.ContactRequests => ContactRequest": [
 				"Child sObject [ContactRequest] is not processed"
 			],
-			"Account.null => ContentDistribution": [
+			"Certification_Element__c.null => ContentDistribution": [
 				"Child sObject [ContentDistribution] is not processed"
 			],
-			"Account.ContentDocumentLinks => ContentDocumentLink": [
+			"Certification_Element__c.ContentDocumentLinks => ContentDocumentLink": [
 				"Child sObject [ContentDocumentLink] is not processed"
 			],
-			"Account.null => ContentVersion": [
+			"Certification_Element__c.null => ContentVersion": [
 				"Child sObject [ContentVersion] is not processed"
 			],
-			"Account.Contracts => Contract": [
-				"Child sObject [Contract] is not processed"
-			],
-			"Account.DuplicateRecordItems => DuplicateRecordItem": [
+			"Certification_Element__c.DuplicateRecordItems => DuplicateRecordItem": [
 				"Child sObject [DuplicateRecordItem] is not processed"
 			],
-			"Account.Emails => EmailMessage": [
+			"Certification_Element__c.Emails => EmailMessage": [
 				"Child sObject [EmailMessage] is not processed"
 			],
-			"Account.FeedSubscriptionsForEntity => EntitySubscription": [
+			"Certification_Element__c.FeedSubscriptionsForEntity => EntitySubscription": [
 				"Child sObject [EntitySubscription] is not processed"
 			],
-			"Account.null => Event": [
+			"Certification_Element__c.Events => Event": [
 				"Child sObject [Event] is not processed"
 			],
-			"Account.Events => Event": [
-				"Child sObject [Event] is not processed"
-			],
-			"Account.null => EventChangeEvent": [
+			"Certification_Element__c.null => EventChangeEvent": [
 				"Child sObject [EventChangeEvent] is not processed"
 			],
-			"Account.null => EventRelationChangeEvent": [
+			"Certification_Element__c.null => EventRelationChangeEvent": [
 				"Child sObject [EventRelationChangeEvent] is not processed"
 			],
-			"Account.null => FeedComment": [
+			"Certification_Element__c.null => FeedComment": [
 				"Child sObject [FeedComment] is not processed"
 			],
-			"Account.null => FeedItem": [
+			"Certification_Element__c.null => FeedItem": [
 				"Child sObject [FeedItem] is not processed"
 			],
-			"Account.null => FlowRecordRelation": [
+			"Certification_Element__c.null => FlowRecordRelation": [
 				"Child sObject [FlowRecordRelation] is not processed"
 			],
-			"Account.null => Lead": [
-				"Child sObject [Lead] is not processed"
-			],
-			"Account.null => LeadChangeEvent": [
-				"Child sObject [LeadChangeEvent] is not processed"
-			],
-			"Account.Notes => Note": [
+			"Certification_Element__c.Notes => Note": [
 				"Child sObject [Note] is not processed"
 			],
-			"Account.NotesAndAttachments => NoteAndAttachment": [
+			"Certification_Element__c.NotesAndAttachments => NoteAndAttachment": [
 				"Child sObject [NoteAndAttachment] is not processed"
 			],
-			"Account.OpenActivities => OpenActivity": [
+			"Certification_Element__c.OpenActivities => OpenActivity": [
 				"Child sObject [OpenActivity] is not processed"
 			],
-			"Account.null => OpportunityChangeEvent": [
-				"Child sObject [OpportunityChangeEvent] is not processed"
-			],
-			"Account.OpportunityPartnersTo => OpportunityPartner": [
-				"Child sObject [OpportunityPartner] is not processed"
-			],
-			"Account.Orders => Order": [
-				"Child sObject [Order] is not processed"
-			],
-			"Account.null => OrderChangeEvent": [
-				"Child sObject [OrderChangeEvent] is not processed"
-			],
-			"Account.null => OutgoingEmail": [
+			"Certification_Element__c.null => OutgoingEmail": [
 				"Child sObject [OutgoingEmail] is not processed"
 			],
-			"Account.PartnersFrom => Partner": [
-				"Child sObject [Partner] is not processed"
-			],
-			"Account.PartnersTo => Partner": [
-				"Child sObject [Partner] is not processed"
-			],
-			"Account.ProcessInstances => ProcessInstance": [
+			"Certification_Element__c.ProcessInstances => ProcessInstance": [
 				"Child sObject [ProcessInstance] is not processed"
 			],
-			"Account.ProcessSteps => ProcessInstanceHistory": [
+			"Certification_Element__c.ProcessSteps => ProcessInstanceHistory": [
 				"Child sObject [ProcessInstanceHistory] is not processed"
 			],
-			"Account.RecordActions => RecordAction": [
+			"Certification_Element__c.RecordActions => RecordAction": [
 				"Child sObject [RecordAction] is not processed"
 			],
-			"Account.RecordActionHistories => RecordActionHistory": [
+			"Certification_Element__c.RecordActionHistories => RecordActionHistory": [
 				"Child sObject [RecordActionHistory] is not processed"
 			],
-			"Account.Personas => SocialPersona": [
-				"Child sObject [SocialPersona] is not processed"
-			],
-			"Account.Posts => SocialPost": [
-				"Child sObject [SocialPost] is not processed"
-			],
-			"Account.null => Task": [
+			"Certification_Element__c.Tasks => Task": [
 				"Child sObject [Task] is not processed"
 			],
-			"Account.Tasks => Task": [
-				"Child sObject [Task] is not processed"
-			],
-			"Account.null => TaskChangeEvent": [
+			"Certification_Element__c.null => TaskChangeEvent": [
 				"Child sObject [TaskChangeEvent] is not processed"
 			],
-			"Account.TopicAssignments => TopicAssignment": [
+			"Certification_Element__c.TopicAssignments => TopicAssignment": [
 				"Child sObject [TopicAssignment] is not processed"
 			],
-			"Account.Users => User": [
-				"Child sObject [User] is not processed"
+			"Course__c.ActivityHistories => ActivityHistory": [
+				"Child sObject [ActivityHistory] is not processed"
 			],
-			"Account.null => UserChangeEvent": [
-				"Child sObject [UserChangeEvent] is not processed"
+			"Course__c.AttachedContentDocuments => AttachedContentDocument": [
+				"Child sObject [AttachedContentDocument] is not processed"
 			],
-			"Account.null => UserRole": [
-				"Child sObject [UserRole] is not processed"
+			"Course__c.AttachedContentNotes => AttachedContentNote": [
+				"Child sObject [AttachedContentNote] is not processed"
+			],
+			"Course__c.Attachments => Attachment": [
+				"Child sObject [Attachment] is not processed"
+			],
+			"Course__c.RecordAssociatedGroups => CollaborationGroupRecord": [
+				"Child sObject [CollaborationGroupRecord] is not processed"
+			],
+			"Course__c.CombinedAttachments => CombinedAttachment": [
+				"Child sObject [CombinedAttachment] is not processed"
+			],
+			"Course__c.ContactRequests => ContactRequest": [
+				"Child sObject [ContactRequest] is not processed"
+			],
+			"Course__c.null => ContentDistribution": [
+				"Child sObject [ContentDistribution] is not processed"
+			],
+			"Course__c.ContentDocumentLinks => ContentDocumentLink": [
+				"Child sObject [ContentDocumentLink] is not processed"
+			],
+			"Course__c.null => ContentVersion": [
+				"Child sObject [ContentVersion] is not processed"
+			],
+			"Course__c.Histories => Course__History": [
+				"Child sObject [Course__History] is not processed"
+			],
+			"Course__c.Shares => Course__Share": [
+				"Child sObject [Course__Share] is not processed"
+			],
+			"Course__c.DuplicateRecordItems => DuplicateRecordItem": [
+				"Child sObject [DuplicateRecordItem] is not processed"
+			],
+			"Course__c.Emails => EmailMessage": [
+				"Child sObject [EmailMessage] is not processed"
+			],
+			"Course__c.FeedSubscriptionsForEntity => EntitySubscription": [
+				"Child sObject [EntitySubscription] is not processed"
+			],
+			"Course__c.Events => Event": [
+				"Child sObject [Event] is not processed"
+			],
+			"Course__c.null => EventChangeEvent": [
+				"Child sObject [EventChangeEvent] is not processed"
+			],
+			"Course__c.null => EventRelationChangeEvent": [
+				"Child sObject [EventRelationChangeEvent] is not processed"
+			],
+			"Course__c.null => FeedComment": [
+				"Child sObject [FeedComment] is not processed"
+			],
+			"Course__c.null => FeedItem": [
+				"Child sObject [FeedItem] is not processed"
+			],
+			"Course__c.null => FlowRecordRelation": [
+				"Child sObject [FlowRecordRelation] is not processed"
+			],
+			"Course__c.Notes => Note": [
+				"Child sObject [Note] is not processed"
+			],
+			"Course__c.NotesAndAttachments => NoteAndAttachment": [
+				"Child sObject [NoteAndAttachment] is not processed"
+			],
+			"Course__c.OpenActivities => OpenActivity": [
+				"Child sObject [OpenActivity] is not processed"
+			],
+			"Course__c.null => OutgoingEmail": [
+				"Child sObject [OutgoingEmail] is not processed"
+			],
+			"Course__c.ProcessInstances => ProcessInstance": [
+				"Child sObject [ProcessInstance] is not processed"
+			],
+			"Course__c.ProcessSteps => ProcessInstanceHistory": [
+				"Child sObject [ProcessInstanceHistory] is not processed"
+			],
+			"Course__c.RecordActions => RecordAction": [
+				"Child sObject [RecordAction] is not processed"
+			],
+			"Course__c.RecordActionHistories => RecordActionHistory": [
+				"Child sObject [RecordActionHistory] is not processed"
+			],
+			"Course__c.Tasks => Task": [
+				"Child sObject [Task] is not processed"
+			],
+			"Course__c.null => TaskChangeEvent": [
+				"Child sObject [TaskChangeEvent] is not processed"
+			],
+			"Course__c.TopicAssignments => TopicAssignment": [
+				"Child sObject [TopicAssignment] is not processed"
 			],
 			"Certification_Attempt__c.ActivityHistories => ActivityHistory": [
 				"Child sObject [ActivityHistory] is not processed"
@@ -2259,387 +2684,6 @@
 			],
 			"Certification_Attempt__c.TopicAssignments => TopicAssignment": [
 				"Child sObject [TopicAssignment] is not processed"
-			],
-			"Certification_Held__c.ActivityHistories => ActivityHistory": [
-				"Child sObject [ActivityHistory] is not processed"
-			],
-			"Certification_Held__c.AttachedContentDocuments => AttachedContentDocument": [
-				"Child sObject [AttachedContentDocument] is not processed"
-			],
-			"Certification_Held__c.AttachedContentNotes => AttachedContentNote": [
-				"Child sObject [AttachedContentNote] is not processed"
-			],
-			"Certification_Held__c.Attachments => Attachment": [
-				"Child sObject [Attachment] is not processed"
-			],
-			"Certification_Held__c.Histories => Certification_Held__History": [
-				"Child sObject [Certification_Held__History] is not processed"
-			],
-			"Certification_Held__c.RecordAssociatedGroups => CollaborationGroupRecord": [
-				"Child sObject [CollaborationGroupRecord] is not processed"
-			],
-			"Certification_Held__c.CombinedAttachments => CombinedAttachment": [
-				"Child sObject [CombinedAttachment] is not processed"
-			],
-			"Certification_Held__c.ContactRequests => ContactRequest": [
-				"Child sObject [ContactRequest] is not processed"
-			],
-			"Certification_Held__c.null => ContentDistribution": [
-				"Child sObject [ContentDistribution] is not processed"
-			],
-			"Certification_Held__c.ContentDocumentLinks => ContentDocumentLink": [
-				"Child sObject [ContentDocumentLink] is not processed"
-			],
-			"Certification_Held__c.null => ContentVersion": [
-				"Child sObject [ContentVersion] is not processed"
-			],
-			"Certification_Held__c.DuplicateRecordItems => DuplicateRecordItem": [
-				"Child sObject [DuplicateRecordItem] is not processed"
-			],
-			"Certification_Held__c.Emails => EmailMessage": [
-				"Child sObject [EmailMessage] is not processed"
-			],
-			"Certification_Held__c.FeedSubscriptionsForEntity => EntitySubscription": [
-				"Child sObject [EntitySubscription] is not processed"
-			],
-			"Certification_Held__c.Events => Event": [
-				"Child sObject [Event] is not processed"
-			],
-			"Certification_Held__c.null => EventChangeEvent": [
-				"Child sObject [EventChangeEvent] is not processed"
-			],
-			"Certification_Held__c.null => EventRelationChangeEvent": [
-				"Child sObject [EventRelationChangeEvent] is not processed"
-			],
-			"Certification_Held__c.null => FeedComment": [
-				"Child sObject [FeedComment] is not processed"
-			],
-			"Certification_Held__c.null => FeedItem": [
-				"Child sObject [FeedItem] is not processed"
-			],
-			"Certification_Held__c.null => FlowRecordRelation": [
-				"Child sObject [FlowRecordRelation] is not processed"
-			],
-			"Certification_Held__c.Notes => Note": [
-				"Child sObject [Note] is not processed"
-			],
-			"Certification_Held__c.NotesAndAttachments => NoteAndAttachment": [
-				"Child sObject [NoteAndAttachment] is not processed"
-			],
-			"Certification_Held__c.OpenActivities => OpenActivity": [
-				"Child sObject [OpenActivity] is not processed"
-			],
-			"Certification_Held__c.null => OutgoingEmail": [
-				"Child sObject [OutgoingEmail] is not processed"
-			],
-			"Certification_Held__c.ProcessInstances => ProcessInstance": [
-				"Child sObject [ProcessInstance] is not processed"
-			],
-			"Certification_Held__c.ProcessSteps => ProcessInstanceHistory": [
-				"Child sObject [ProcessInstanceHistory] is not processed"
-			],
-			"Certification_Held__c.RecordActions => RecordAction": [
-				"Child sObject [RecordAction] is not processed"
-			],
-			"Certification_Held__c.RecordActionHistories => RecordActionHistory": [
-				"Child sObject [RecordActionHistory] is not processed"
-			],
-			"Certification_Held__c.Tasks => Task": [
-				"Child sObject [Task] is not processed"
-			],
-			"Certification_Held__c.null => TaskChangeEvent": [
-				"Child sObject [TaskChangeEvent] is not processed"
-			],
-			"Certification_Held__c.TopicAssignments => TopicAssignment": [
-				"Child sObject [TopicAssignment] is not processed"
-			],
-			"Course_Attendee__c.ActivityHistories => ActivityHistory": [
-				"Child sObject [ActivityHistory] is not processed"
-			],
-			"Course_Attendee__c.AttachedContentDocuments => AttachedContentDocument": [
-				"Child sObject [AttachedContentDocument] is not processed"
-			],
-			"Course_Attendee__c.AttachedContentNotes => AttachedContentNote": [
-				"Child sObject [AttachedContentNote] is not processed"
-			],
-			"Course_Attendee__c.Attachments => Attachment": [
-				"Child sObject [Attachment] is not processed"
-			],
-			"Course_Attendee__c.RecordAssociatedGroups => CollaborationGroupRecord": [
-				"Child sObject [CollaborationGroupRecord] is not processed"
-			],
-			"Course_Attendee__c.CombinedAttachments => CombinedAttachment": [
-				"Child sObject [CombinedAttachment] is not processed"
-			],
-			"Course_Attendee__c.ContactRequests => ContactRequest": [
-				"Child sObject [ContactRequest] is not processed"
-			],
-			"Course_Attendee__c.null => ContentDistribution": [
-				"Child sObject [ContentDistribution] is not processed"
-			],
-			"Course_Attendee__c.ContentDocumentLinks => ContentDocumentLink": [
-				"Child sObject [ContentDocumentLink] is not processed"
-			],
-			"Course_Attendee__c.null => ContentVersion": [
-				"Child sObject [ContentVersion] is not processed"
-			],
-			"Course_Attendee__c.Histories => Course_Attendee__History": [
-				"Child sObject [Course_Attendee__History] is not processed"
-			],
-			"Course_Attendee__c.DuplicateRecordItems => DuplicateRecordItem": [
-				"Child sObject [DuplicateRecordItem] is not processed"
-			],
-			"Course_Attendee__c.Emails => EmailMessage": [
-				"Child sObject [EmailMessage] is not processed"
-			],
-			"Course_Attendee__c.FeedSubscriptionsForEntity => EntitySubscription": [
-				"Child sObject [EntitySubscription] is not processed"
-			],
-			"Course_Attendee__c.Events => Event": [
-				"Child sObject [Event] is not processed"
-			],
-			"Course_Attendee__c.null => EventChangeEvent": [
-				"Child sObject [EventChangeEvent] is not processed"
-			],
-			"Course_Attendee__c.null => EventRelationChangeEvent": [
-				"Child sObject [EventRelationChangeEvent] is not processed"
-			],
-			"Course_Attendee__c.null => FeedComment": [
-				"Child sObject [FeedComment] is not processed"
-			],
-			"Course_Attendee__c.null => FeedItem": [
-				"Child sObject [FeedItem] is not processed"
-			],
-			"Course_Attendee__c.null => FlowRecordRelation": [
-				"Child sObject [FlowRecordRelation] is not processed"
-			],
-			"Course_Attendee__c.Notes => Note": [
-				"Child sObject [Note] is not processed"
-			],
-			"Course_Attendee__c.NotesAndAttachments => NoteAndAttachment": [
-				"Child sObject [NoteAndAttachment] is not processed"
-			],
-			"Course_Attendee__c.OpenActivities => OpenActivity": [
-				"Child sObject [OpenActivity] is not processed"
-			],
-			"Course_Attendee__c.null => OutgoingEmail": [
-				"Child sObject [OutgoingEmail] is not processed"
-			],
-			"Course_Attendee__c.ProcessInstances => ProcessInstance": [
-				"Child sObject [ProcessInstance] is not processed"
-			],
-			"Course_Attendee__c.ProcessSteps => ProcessInstanceHistory": [
-				"Child sObject [ProcessInstanceHistory] is not processed"
-			],
-			"Course_Attendee__c.RecordActions => RecordAction": [
-				"Child sObject [RecordAction] is not processed"
-			],
-			"Course_Attendee__c.RecordActionHistories => RecordActionHistory": [
-				"Child sObject [RecordActionHistory] is not processed"
-			],
-			"Course_Attendee__c.Tasks => Task": [
-				"Child sObject [Task] is not processed"
-			],
-			"Course_Attendee__c.null => TaskChangeEvent": [
-				"Child sObject [TaskChangeEvent] is not processed"
-			],
-			"Course_Attendee__c.TopicAssignments => TopicAssignment": [
-				"Child sObject [TopicAssignment] is not processed"
-			],
-			"Contact.AcceptedEventRelations => AcceptedEventRelation": [
-				"Child sObject [AcceptedEventRelation] is not processed"
-			],
-			"Contact.AccountContactRoles => AccountContactRole": [
-				"Child sObject [AccountContactRole] is not processed"
-			],
-			"Contact.null => AccountContactRoleChangeEvent": [
-				"Child sObject [AccountContactRoleChangeEvent] is not processed"
-			],
-			"Contact.ActivityHistories => ActivityHistory": [
-				"Child sObject [ActivityHistory] is not processed"
-			],
-			"Contact.Assets => Asset": [
-				"Child sObject [Asset] is not processed"
-			],
-			"Contact.null => AssetChangeEvent": [
-				"Child sObject [AssetChangeEvent] is not processed"
-			],
-			"Contact.AttachedContentDocuments => AttachedContentDocument": [
-				"Child sObject [AttachedContentDocument] is not processed"
-			],
-			"Contact.AttachedContentNotes => AttachedContentNote": [
-				"Child sObject [AttachedContentNote] is not processed"
-			],
-			"Contact.Attachments => Attachment": [
-				"Child sObject [Attachment] is not processed"
-			],
-			"Contact.CampaignMembers => CampaignMember": [
-				"Child sObject [CampaignMember] is not processed"
-			],
-			"Contact.null => CampaignMember": [
-				"Child sObject [CampaignMember] is not processed"
-			],
-			"Contact.null => CaseChangeEvent": [
-				"Child sObject [CaseChangeEvent] is not processed"
-			],
-			"Contact.CaseContactRoles => CaseContactRole": [
-				"Child sObject [CaseContactRole] is not processed"
-			],
-			"Contact.null => CaseTeamMember": [
-				"Child sObject [CaseTeamMember] is not processed"
-			],
-			"Contact.null => CaseTeamTemplateMember": [
-				"Child sObject [CaseTeamTemplateMember] is not processed"
-			],
-			"Contact.RecordAssociatedGroups => CollaborationGroupRecord": [
-				"Child sObject [CollaborationGroupRecord] is not processed"
-			],
-			"Contact.CombinedAttachments => CombinedAttachment": [
-				"Child sObject [CombinedAttachment] is not processed"
-			],
-			"Contact.null => Contact": [
-				"Current version does not allow recursive parenting"
-			],
-			"Contact.null => ContactChangeEvent": [
-				"Child sObject [ContactChangeEvent] is not processed"
-			],
-			"Contact.Feeds => ContactFeed": [
-				"Child sObject [ContactFeed] is not processed"
-			],
-			"Contact.Histories => ContactHistory": [
-				"Child sObject [ContactHistory] is not processed"
-			],
-			"Contact.ContactRequests => ContactRequest": [
-				"Child sObject [ContactRequest] is not processed"
-			],
-			"Contact.Shares => ContactShare": [
-				"Child sObject [ContactShare] is not processed"
-			],
-			"Contact.null => ContentDistribution": [
-				"Child sObject [ContentDistribution] is not processed"
-			],
-			"Contact.ContentDocumentLinks => ContentDocumentLink": [
-				"Child sObject [ContentDocumentLink] is not processed"
-			],
-			"Contact.null => ContentVersion": [
-				"Child sObject [ContentVersion] is not processed"
-			],
-			"Contact.ContractsSigned => Contract": [
-				"Child sObject [Contract] is not processed"
-			],
-			"Contact.ContractContactRoles => ContractContactRole": [
-				"Child sObject [ContractContactRole] is not processed"
-			],
-			"Contact.DeclinedEventRelations => DeclinedEventRelation": [
-				"Child sObject [DeclinedEventRelation] is not processed"
-			],
-			"Contact.DuplicateRecordItems => DuplicateRecordItem": [
-				"Child sObject [DuplicateRecordItem] is not processed"
-			],
-			"Contact.EmailMessageRelations => EmailMessageRelation": [
-				"Child sObject [EmailMessageRelation] is not processed"
-			],
-			"Contact.EmailStatuses => EmailStatus": [
-				"Child sObject [EmailStatus] is not processed"
-			],
-			"Contact.FeedSubscriptionsForEntity => EntitySubscription": [
-				"Child sObject [EntitySubscription] is not processed"
-			],
-			"Contact.Events => Event": [
-				"Child sObject [Event] is not processed"
-			],
-			"Contact.null => EventChangeEvent": [
-				"Child sObject [EventChangeEvent] is not processed"
-			],
-			"Contact.EventRelations => EventRelation": [
-				"Child sObject [EventRelation] is not processed"
-			],
-			"Contact.null => EventRelationChangeEvent": [
-				"Child sObject [EventRelationChangeEvent] is not processed"
-			],
-			"Contact.null => FeedComment": [
-				"Child sObject [FeedComment] is not processed"
-			],
-			"Contact.null => FeedItem": [
-				"Child sObject [FeedItem] is not processed"
-			],
-			"Contact.null => FlowRecordRelation": [
-				"Child sObject [FlowRecordRelation] is not processed"
-			],
-			"Contact.null => Lead": [
-				"Child sObject [Lead] is not processed"
-			],
-			"Contact.null => LeadChangeEvent": [
-				"Child sObject [LeadChangeEvent] is not processed"
-			],
-			"Contact.ListEmailIndividualRecipients => ListEmailIndividualRecipient": [
-				"Child sObject [ListEmailIndividualRecipient] is not processed"
-			],
-			"Contact.Notes => Note": [
-				"Child sObject [Note] is not processed"
-			],
-			"Contact.NotesAndAttachments => NoteAndAttachment": [
-				"Child sObject [NoteAndAttachment] is not processed"
-			],
-			"Contact.OpenActivities => OpenActivity": [
-				"Child sObject [OpenActivity] is not processed"
-			],
-			"Contact.OpportunityContactRoles => OpportunityContactRole": [
-				"Child sObject [OpportunityContactRole] is not processed"
-			],
-			"Contact.null => OpportunityContactRoleChangeEvent": [
-				"Child sObject [OpportunityContactRoleChangeEvent] is not processed"
-			],
-			"Contact.null => Order": [
-				"Child sObject [Order] is not processed"
-			],
-			"Contact.null => OrderChangeEvent": [
-				"Child sObject [OrderChangeEvent] is not processed"
-			],
-			"Contact.null => OutgoingEmail": [
-				"Child sObject [OutgoingEmail] is not processed"
-			],
-			"Contact.OutgoingEmailRelations => OutgoingEmailRelation": [
-				"Child sObject [OutgoingEmailRelation] is not processed"
-			],
-			"Contact.ProcessInstances => ProcessInstance": [
-				"Child sObject [ProcessInstance] is not processed"
-			],
-			"Contact.ProcessSteps => ProcessInstanceHistory": [
-				"Child sObject [ProcessInstanceHistory] is not processed"
-			],
-			"Contact.RecordActions => RecordAction": [
-				"Child sObject [RecordAction] is not processed"
-			],
-			"Contact.RecordActionHistories => RecordActionHistory": [
-				"Child sObject [RecordActionHistory] is not processed"
-			],
-			"Contact.Personas => SocialPersona": [
-				"Child sObject [SocialPersona] is not processed"
-			],
-			"Contact.Posts => SocialPost": [
-				"Child sObject [SocialPost] is not processed"
-			],
-			"Contact.Tasks => Task": [
-				"Child sObject [Task] is not processed"
-			],
-			"Contact.null => TaskChangeEvent": [
-				"Child sObject [TaskChangeEvent] is not processed"
-			],
-			"Contact.TopicAssignments => TopicAssignment": [
-				"Child sObject [TopicAssignment] is not processed"
-			],
-			"Contact.UndecidedEventRelations => UndecidedEventRelation": [
-				"Child sObject [UndecidedEventRelation] is not processed"
-			],
-			"Contact.Users => User": [
-				"Child sObject [User] is not processed"
-			],
-			"Contact.null => UserChangeEvent": [
-				"Child sObject [UserChangeEvent] is not processed"
-			],
-			"Contact.PersonRecord => UserEmailPreferredPerson": [
-				"Child sObject [UserEmailPreferredPerson] is not processed"
 			],
 			"Opportunity.AccountPartners => AccountPartner": [
 				"Child sObject [AccountPartner] is not processed"
@@ -2776,270 +2820,6 @@
 			"Opportunity.TopicAssignments => TopicAssignment": [
 				"Child sObject [TopicAssignment] is not processed"
 			],
-			"TripReport__c.AttachedContentDocuments => AttachedContentDocument": [
-				"Child sObject [AttachedContentDocument] is not processed"
-			],
-			"TripReport__c.AttachedContentNotes => AttachedContentNote": [
-				"Child sObject [AttachedContentNote] is not processed"
-			],
-			"TripReport__c.Attachments => Attachment": [
-				"Child sObject [Attachment] is not processed"
-			],
-			"TripReport__c.RecordAssociatedGroups => CollaborationGroupRecord": [
-				"Child sObject [CollaborationGroupRecord] is not processed"
-			],
-			"TripReport__c.CombinedAttachments => CombinedAttachment": [
-				"Child sObject [CombinedAttachment] is not processed"
-			],
-			"TripReport__c.ContactRequests => ContactRequest": [
-				"Child sObject [ContactRequest] is not processed"
-			],
-			"TripReport__c.null => ContentDistribution": [
-				"Child sObject [ContentDistribution] is not processed"
-			],
-			"TripReport__c.ContentDocumentLinks => ContentDocumentLink": [
-				"Child sObject [ContentDocumentLink] is not processed"
-			],
-			"TripReport__c.null => ContentVersion": [
-				"Child sObject [ContentVersion] is not processed"
-			],
-			"TripReport__c.DuplicateRecordItems => DuplicateRecordItem": [
-				"Child sObject [DuplicateRecordItem] is not processed"
-			],
-			"TripReport__c.Emails => EmailMessage": [
-				"Child sObject [EmailMessage] is not processed"
-			],
-			"TripReport__c.FeedSubscriptionsForEntity => EntitySubscription": [
-				"Child sObject [EntitySubscription] is not processed"
-			],
-			"TripReport__c.null => EventChangeEvent": [
-				"Child sObject [EventChangeEvent] is not processed"
-			],
-			"TripReport__c.null => EventRelationChangeEvent": [
-				"Child sObject [EventRelationChangeEvent] is not processed"
-			],
-			"TripReport__c.null => FeedComment": [
-				"Child sObject [FeedComment] is not processed"
-			],
-			"TripReport__c.null => FeedItem": [
-				"Child sObject [FeedItem] is not processed"
-			],
-			"TripReport__c.null => FlowRecordRelation": [
-				"Child sObject [FlowRecordRelation] is not processed"
-			],
-			"TripReport__c.Notes => Note": [
-				"Child sObject [Note] is not processed"
-			],
-			"TripReport__c.NotesAndAttachments => NoteAndAttachment": [
-				"Child sObject [NoteAndAttachment] is not processed"
-			],
-			"TripReport__c.ProcessInstances => ProcessInstance": [
-				"Child sObject [ProcessInstance] is not processed"
-			],
-			"TripReport__c.ProcessSteps => ProcessInstanceHistory": [
-				"Child sObject [ProcessInstanceHistory] is not processed"
-			],
-			"TripReport__c.RecordActions => RecordAction": [
-				"Child sObject [RecordAction] is not processed"
-			],
-			"TripReport__c.RecordActionHistories => RecordActionHistory": [
-				"Child sObject [RecordActionHistory] is not processed"
-			],
-			"TripReport__c.null => TaskChangeEvent": [
-				"Child sObject [TaskChangeEvent] is not processed"
-			],
-			"TripReport__c.TopicAssignments => TopicAssignment": [
-				"Child sObject [TopicAssignment] is not processed"
-			],
-			"Certification__c.ActivityHistories => ActivityHistory": [
-				"Child sObject [ActivityHistory] is not processed"
-			],
-			"Certification__c.AttachedContentDocuments => AttachedContentDocument": [
-				"Child sObject [AttachedContentDocument] is not processed"
-			],
-			"Certification__c.AttachedContentNotes => AttachedContentNote": [
-				"Child sObject [AttachedContentNote] is not processed"
-			],
-			"Certification__c.Attachments => Attachment": [
-				"Child sObject [Attachment] is not processed"
-			],
-			"Certification__c.Histories => Certification__History": [
-				"Child sObject [Certification__History] is not processed"
-			],
-			"Certification__c.Shares => Certification__Share": [
-				"Child sObject [Certification__Share] is not processed"
-			],
-			"Certification__c.RecordAssociatedGroups => CollaborationGroupRecord": [
-				"Child sObject [CollaborationGroupRecord] is not processed"
-			],
-			"Certification__c.CombinedAttachments => CombinedAttachment": [
-				"Child sObject [CombinedAttachment] is not processed"
-			],
-			"Certification__c.ContactRequests => ContactRequest": [
-				"Child sObject [ContactRequest] is not processed"
-			],
-			"Certification__c.null => ContentDistribution": [
-				"Child sObject [ContentDistribution] is not processed"
-			],
-			"Certification__c.ContentDocumentLinks => ContentDocumentLink": [
-				"Child sObject [ContentDocumentLink] is not processed"
-			],
-			"Certification__c.null => ContentVersion": [
-				"Child sObject [ContentVersion] is not processed"
-			],
-			"Certification__c.DuplicateRecordItems => DuplicateRecordItem": [
-				"Child sObject [DuplicateRecordItem] is not processed"
-			],
-			"Certification__c.Emails => EmailMessage": [
-				"Child sObject [EmailMessage] is not processed"
-			],
-			"Certification__c.FeedSubscriptionsForEntity => EntitySubscription": [
-				"Child sObject [EntitySubscription] is not processed"
-			],
-			"Certification__c.Events => Event": [
-				"Child sObject [Event] is not processed"
-			],
-			"Certification__c.null => EventChangeEvent": [
-				"Child sObject [EventChangeEvent] is not processed"
-			],
-			"Certification__c.null => EventRelationChangeEvent": [
-				"Child sObject [EventRelationChangeEvent] is not processed"
-			],
-			"Certification__c.null => FeedComment": [
-				"Child sObject [FeedComment] is not processed"
-			],
-			"Certification__c.null => FeedItem": [
-				"Child sObject [FeedItem] is not processed"
-			],
-			"Certification__c.null => FlowRecordRelation": [
-				"Child sObject [FlowRecordRelation] is not processed"
-			],
-			"Certification__c.Notes => Note": [
-				"Child sObject [Note] is not processed"
-			],
-			"Certification__c.NotesAndAttachments => NoteAndAttachment": [
-				"Child sObject [NoteAndAttachment] is not processed"
-			],
-			"Certification__c.OpenActivities => OpenActivity": [
-				"Child sObject [OpenActivity] is not processed"
-			],
-			"Certification__c.null => OutgoingEmail": [
-				"Child sObject [OutgoingEmail] is not processed"
-			],
-			"Certification__c.ProcessInstances => ProcessInstance": [
-				"Child sObject [ProcessInstance] is not processed"
-			],
-			"Certification__c.ProcessSteps => ProcessInstanceHistory": [
-				"Child sObject [ProcessInstanceHistory] is not processed"
-			],
-			"Certification__c.RecordActions => RecordAction": [
-				"Child sObject [RecordAction] is not processed"
-			],
-			"Certification__c.RecordActionHistories => RecordActionHistory": [
-				"Child sObject [RecordActionHistory] is not processed"
-			],
-			"Certification__c.Tasks => Task": [
-				"Child sObject [Task] is not processed"
-			],
-			"Certification__c.null => TaskChangeEvent": [
-				"Child sObject [TaskChangeEvent] is not processed"
-			],
-			"Certification__c.TopicAssignments => TopicAssignment": [
-				"Child sObject [TopicAssignment] is not processed"
-			],
-			"Certification_Element__c.ActivityHistories => ActivityHistory": [
-				"Child sObject [ActivityHistory] is not processed"
-			],
-			"Certification_Element__c.AttachedContentDocuments => AttachedContentDocument": [
-				"Child sObject [AttachedContentDocument] is not processed"
-			],
-			"Certification_Element__c.AttachedContentNotes => AttachedContentNote": [
-				"Child sObject [AttachedContentNote] is not processed"
-			],
-			"Certification_Element__c.Attachments => Attachment": [
-				"Child sObject [Attachment] is not processed"
-			],
-			"Certification_Element__c.Histories => Certification_Element__History": [
-				"Child sObject [Certification_Element__History] is not processed"
-			],
-			"Certification_Element__c.RecordAssociatedGroups => CollaborationGroupRecord": [
-				"Child sObject [CollaborationGroupRecord] is not processed"
-			],
-			"Certification_Element__c.CombinedAttachments => CombinedAttachment": [
-				"Child sObject [CombinedAttachment] is not processed"
-			],
-			"Certification_Element__c.ContactRequests => ContactRequest": [
-				"Child sObject [ContactRequest] is not processed"
-			],
-			"Certification_Element__c.null => ContentDistribution": [
-				"Child sObject [ContentDistribution] is not processed"
-			],
-			"Certification_Element__c.ContentDocumentLinks => ContentDocumentLink": [
-				"Child sObject [ContentDocumentLink] is not processed"
-			],
-			"Certification_Element__c.null => ContentVersion": [
-				"Child sObject [ContentVersion] is not processed"
-			],
-			"Certification_Element__c.DuplicateRecordItems => DuplicateRecordItem": [
-				"Child sObject [DuplicateRecordItem] is not processed"
-			],
-			"Certification_Element__c.Emails => EmailMessage": [
-				"Child sObject [EmailMessage] is not processed"
-			],
-			"Certification_Element__c.FeedSubscriptionsForEntity => EntitySubscription": [
-				"Child sObject [EntitySubscription] is not processed"
-			],
-			"Certification_Element__c.Events => Event": [
-				"Child sObject [Event] is not processed"
-			],
-			"Certification_Element__c.null => EventChangeEvent": [
-				"Child sObject [EventChangeEvent] is not processed"
-			],
-			"Certification_Element__c.null => EventRelationChangeEvent": [
-				"Child sObject [EventRelationChangeEvent] is not processed"
-			],
-			"Certification_Element__c.null => FeedComment": [
-				"Child sObject [FeedComment] is not processed"
-			],
-			"Certification_Element__c.null => FeedItem": [
-				"Child sObject [FeedItem] is not processed"
-			],
-			"Certification_Element__c.null => FlowRecordRelation": [
-				"Child sObject [FlowRecordRelation] is not processed"
-			],
-			"Certification_Element__c.Notes => Note": [
-				"Child sObject [Note] is not processed"
-			],
-			"Certification_Element__c.NotesAndAttachments => NoteAndAttachment": [
-				"Child sObject [NoteAndAttachment] is not processed"
-			],
-			"Certification_Element__c.OpenActivities => OpenActivity": [
-				"Child sObject [OpenActivity] is not processed"
-			],
-			"Certification_Element__c.null => OutgoingEmail": [
-				"Child sObject [OutgoingEmail] is not processed"
-			],
-			"Certification_Element__c.ProcessInstances => ProcessInstance": [
-				"Child sObject [ProcessInstance] is not processed"
-			],
-			"Certification_Element__c.ProcessSteps => ProcessInstanceHistory": [
-				"Child sObject [ProcessInstanceHistory] is not processed"
-			],
-			"Certification_Element__c.RecordActions => RecordAction": [
-				"Child sObject [RecordAction] is not processed"
-			],
-			"Certification_Element__c.RecordActionHistories => RecordActionHistory": [
-				"Child sObject [RecordActionHistory] is not processed"
-			],
-			"Certification_Element__c.Tasks => Task": [
-				"Child sObject [Task] is not processed"
-			],
-			"Certification_Element__c.null => TaskChangeEvent": [
-				"Child sObject [TaskChangeEvent] is not processed"
-			],
-			"Certification_Element__c.TopicAssignments => TopicAssignment": [
-				"Child sObject [TopicAssignment] is not processed"
-			],
 			"Case.ActivityHistories => ActivityHistory": [
 				"Child sObject [ActivityHistory] is not processed"
 			],
@@ -3151,101 +2931,395 @@
 			"Case.TopicAssignments => TopicAssignment": [
 				"Child sObject [TopicAssignment] is not processed"
 			],
-			"Course__c.ActivityHistories => ActivityHistory": [
+			"Contact.AcceptedEventRelations => AcceptedEventRelation": [
+				"Child sObject [AcceptedEventRelation] is not processed"
+			],
+			"Contact.AccountContactRoles => AccountContactRole": [
+				"Child sObject [AccountContactRole] is not processed"
+			],
+			"Contact.null => AccountContactRoleChangeEvent": [
+				"Child sObject [AccountContactRoleChangeEvent] is not processed"
+			],
+			"Contact.ActivityHistories => ActivityHistory": [
 				"Child sObject [ActivityHistory] is not processed"
 			],
-			"Course__c.AttachedContentDocuments => AttachedContentDocument": [
+			"Contact.Assets => Asset": [
+				"Child sObject [Asset] is not processed"
+			],
+			"Contact.null => AssetChangeEvent": [
+				"Child sObject [AssetChangeEvent] is not processed"
+			],
+			"Contact.AttachedContentDocuments => AttachedContentDocument": [
 				"Child sObject [AttachedContentDocument] is not processed"
 			],
-			"Course__c.AttachedContentNotes => AttachedContentNote": [
+			"Contact.AttachedContentNotes => AttachedContentNote": [
 				"Child sObject [AttachedContentNote] is not processed"
 			],
-			"Course__c.Attachments => Attachment": [
+			"Contact.Attachments => Attachment": [
 				"Child sObject [Attachment] is not processed"
 			],
-			"Course__c.RecordAssociatedGroups => CollaborationGroupRecord": [
+			"Contact.CampaignMembers => CampaignMember": [
+				"Child sObject [CampaignMember] is not processed"
+			],
+			"Contact.null => CampaignMember": [
+				"Child sObject [CampaignMember] is not processed"
+			],
+			"Contact.null => CampaignMemberChangeEvent": [
+				"Child sObject [CampaignMemberChangeEvent] is not processed"
+			],
+			"Contact.null => CaseChangeEvent": [
+				"Child sObject [CaseChangeEvent] is not processed"
+			],
+			"Contact.CaseContactRoles => CaseContactRole": [
+				"Child sObject [CaseContactRole] is not processed"
+			],
+			"Contact.null => CaseTeamMember": [
+				"Child sObject [CaseTeamMember] is not processed"
+			],
+			"Contact.null => CaseTeamTemplateMember": [
+				"Child sObject [CaseTeamTemplateMember] is not processed"
+			],
+			"Contact.RecordAssociatedGroups => CollaborationGroupRecord": [
 				"Child sObject [CollaborationGroupRecord] is not processed"
 			],
-			"Course__c.CombinedAttachments => CombinedAttachment": [
+			"Contact.CombinedAttachments => CombinedAttachment": [
 				"Child sObject [CombinedAttachment] is not processed"
 			],
-			"Course__c.ContactRequests => ContactRequest": [
+			"Contact.null => Contact": [
+				"Current version does not allow recursive parenting"
+			],
+			"Contact.null => ContactChangeEvent": [
+				"Child sObject [ContactChangeEvent] is not processed"
+			],
+			"Contact.Feeds => ContactFeed": [
+				"Child sObject [ContactFeed] is not processed"
+			],
+			"Contact.Histories => ContactHistory": [
+				"Child sObject [ContactHistory] is not processed"
+			],
+			"Contact.ContactRequests => ContactRequest": [
 				"Child sObject [ContactRequest] is not processed"
 			],
-			"Course__c.null => ContentDistribution": [
+			"Contact.Shares => ContactShare": [
+				"Child sObject [ContactShare] is not processed"
+			],
+			"Contact.null => ContentDistribution": [
 				"Child sObject [ContentDistribution] is not processed"
 			],
-			"Course__c.ContentDocumentLinks => ContentDocumentLink": [
+			"Contact.ContentDocumentLinks => ContentDocumentLink": [
 				"Child sObject [ContentDocumentLink] is not processed"
 			],
-			"Course__c.null => ContentVersion": [
+			"Contact.null => ContentVersion": [
 				"Child sObject [ContentVersion] is not processed"
 			],
-			"Course__c.Histories => Course__History": [
-				"Child sObject [Course__History] is not processed"
+			"Contact.ContractsSigned => Contract": [
+				"Child sObject [Contract] is not processed"
 			],
-			"Course__c.Shares => Course__Share": [
-				"Child sObject [Course__Share] is not processed"
+			"Contact.null => ContractChangeEvent": [
+				"Child sObject [ContractChangeEvent] is not processed"
 			],
-			"Course__c.DuplicateRecordItems => DuplicateRecordItem": [
+			"Contact.ContractContactRoles => ContractContactRole": [
+				"Child sObject [ContractContactRole] is not processed"
+			],
+			"Contact.DeclinedEventRelations => DeclinedEventRelation": [
+				"Child sObject [DeclinedEventRelation] is not processed"
+			],
+			"Contact.DuplicateRecordItems => DuplicateRecordItem": [
 				"Child sObject [DuplicateRecordItem] is not processed"
 			],
-			"Course__c.Emails => EmailMessage": [
-				"Child sObject [EmailMessage] is not processed"
+			"Contact.EmailMessageRelations => EmailMessageRelation": [
+				"Child sObject [EmailMessageRelation] is not processed"
 			],
-			"Course__c.FeedSubscriptionsForEntity => EntitySubscription": [
+			"Contact.EmailStatuses => EmailStatus": [
+				"Child sObject [EmailStatus] is not processed"
+			],
+			"Contact.FeedSubscriptionsForEntity => EntitySubscription": [
 				"Child sObject [EntitySubscription] is not processed"
 			],
-			"Course__c.Events => Event": [
+			"Contact.Events => Event": [
 				"Child sObject [Event] is not processed"
 			],
-			"Course__c.null => EventChangeEvent": [
+			"Contact.null => EventChangeEvent": [
 				"Child sObject [EventChangeEvent] is not processed"
 			],
-			"Course__c.null => EventRelationChangeEvent": [
+			"Contact.EventRelations => EventRelation": [
+				"Child sObject [EventRelation] is not processed"
+			],
+			"Contact.null => EventRelationChangeEvent": [
 				"Child sObject [EventRelationChangeEvent] is not processed"
 			],
-			"Course__c.null => FeedComment": [
+			"Contact.null => FeedComment": [
 				"Child sObject [FeedComment] is not processed"
 			],
-			"Course__c.null => FeedItem": [
+			"Contact.null => FeedItem": [
 				"Child sObject [FeedItem] is not processed"
 			],
-			"Course__c.null => FlowRecordRelation": [
+			"Contact.null => FlowRecordRelation": [
 				"Child sObject [FlowRecordRelation] is not processed"
 			],
-			"Course__c.Notes => Note": [
+			"Contact.null => Lead": [
+				"Child sObject [Lead] is not processed"
+			],
+			"Contact.null => LeadChangeEvent": [
+				"Child sObject [LeadChangeEvent] is not processed"
+			],
+			"Contact.ListEmailIndividualRecipients => ListEmailIndividualRecipient": [
+				"Child sObject [ListEmailIndividualRecipient] is not processed"
+			],
+			"Contact.Notes => Note": [
 				"Child sObject [Note] is not processed"
 			],
-			"Course__c.NotesAndAttachments => NoteAndAttachment": [
+			"Contact.NotesAndAttachments => NoteAndAttachment": [
 				"Child sObject [NoteAndAttachment] is not processed"
 			],
-			"Course__c.OpenActivities => OpenActivity": [
+			"Contact.OpenActivities => OpenActivity": [
 				"Child sObject [OpenActivity] is not processed"
 			],
-			"Course__c.null => OutgoingEmail": [
+			"Contact.null => OpportunityChangeEvent": [
+				"Child sObject [OpportunityChangeEvent] is not processed"
+			],
+			"Contact.OpportunityContactRoles => OpportunityContactRole": [
+				"Child sObject [OpportunityContactRole] is not processed"
+			],
+			"Contact.null => OpportunityContactRoleChangeEvent": [
+				"Child sObject [OpportunityContactRoleChangeEvent] is not processed"
+			],
+			"Contact.null => Order": [
+				"Child sObject [Order] is not processed"
+			],
+			"Contact.null => OrderChangeEvent": [
+				"Child sObject [OrderChangeEvent] is not processed"
+			],
+			"Contact.null => OutgoingEmail": [
 				"Child sObject [OutgoingEmail] is not processed"
 			],
-			"Course__c.ProcessInstances => ProcessInstance": [
+			"Contact.OutgoingEmailRelations => OutgoingEmailRelation": [
+				"Child sObject [OutgoingEmailRelation] is not processed"
+			],
+			"Contact.ProcessInstances => ProcessInstance": [
 				"Child sObject [ProcessInstance] is not processed"
 			],
-			"Course__c.ProcessSteps => ProcessInstanceHistory": [
+			"Contact.ProcessSteps => ProcessInstanceHistory": [
 				"Child sObject [ProcessInstanceHistory] is not processed"
 			],
-			"Course__c.RecordActions => RecordAction": [
+			"Contact.RecordActions => RecordAction": [
 				"Child sObject [RecordAction] is not processed"
 			],
-			"Course__c.RecordActionHistories => RecordActionHistory": [
+			"Contact.RecordActionHistories => RecordActionHistory": [
 				"Child sObject [RecordActionHistory] is not processed"
 			],
-			"Course__c.Tasks => Task": [
+			"Contact.Personas => SocialPersona": [
+				"Child sObject [SocialPersona] is not processed"
+			],
+			"Contact.Posts => SocialPost": [
+				"Child sObject [SocialPost] is not processed"
+			],
+			"Contact.Tasks => Task": [
 				"Child sObject [Task] is not processed"
 			],
-			"Course__c.null => TaskChangeEvent": [
+			"Contact.null => TaskChangeEvent": [
 				"Child sObject [TaskChangeEvent] is not processed"
 			],
-			"Course__c.TopicAssignments => TopicAssignment": [
+			"Contact.TopicAssignments => TopicAssignment": [
 				"Child sObject [TopicAssignment] is not processed"
+			],
+			"Contact.UndecidedEventRelations => UndecidedEventRelation": [
+				"Child sObject [UndecidedEventRelation] is not processed"
+			],
+			"Contact.Users => User": [
+				"Child sObject [User] is not processed"
+			],
+			"Contact.null => UserChangeEvent": [
+				"Child sObject [UserChangeEvent] is not processed"
+			],
+			"Contact.PersonRecord => UserEmailPreferredPerson": [
+				"Child sObject [UserEmailPreferredPerson] is not processed"
+			],
+			"Account.ChildAccounts => Account": [
+				"Current version does not allow recursive parenting"
+			],
+			"Account.null => AccountChangeEvent": [
+				"Child sObject [AccountChangeEvent] is not processed"
+			],
+			"Account.AccountContactRoles => AccountContactRole": [
+				"Child sObject [AccountContactRole] is not processed"
+			],
+			"Account.null => AccountContactRoleChangeEvent": [
+				"Child sObject [AccountContactRoleChangeEvent] is not processed"
+			],
+			"Account.Feeds => AccountFeed": [
+				"Child sObject [AccountFeed] is not processed"
+			],
+			"Account.Histories => AccountHistory": [
+				"Child sObject [AccountHistory] is not processed"
+			],
+			"Account.AccountPartnersFrom => AccountPartner": [
+				"Child sObject [AccountPartner] is not processed"
+			],
+			"Account.AccountPartnersTo => AccountPartner": [
+				"Child sObject [AccountPartner] is not processed"
+			],
+			"Account.Shares => AccountShare": [
+				"Child sObject [AccountShare] is not processed"
+			],
+			"Account.ActivityHistories => ActivityHistory": [
+				"Child sObject [ActivityHistory] is not processed"
+			],
+			"Account.Assets => Asset": [
+				"Child sObject [Asset] is not processed"
+			],
+			"Account.ProvidedAssets => Asset": [
+				"Child sObject [Asset] is not processed"
+			],
+			"Account.ServicedAssets => Asset": [
+				"Child sObject [Asset] is not processed"
+			],
+			"Account.null => AssetChangeEvent": [
+				"Child sObject [AssetChangeEvent] is not processed"
+			],
+			"Account.AttachedContentDocuments => AttachedContentDocument": [
+				"Child sObject [AttachedContentDocument] is not processed"
+			],
+			"Account.AttachedContentNotes => AttachedContentNote": [
+				"Child sObject [AttachedContentNote] is not processed"
+			],
+			"Account.Attachments => Attachment": [
+				"Child sObject [Attachment] is not processed"
+			],
+			"Account.null => CaseChangeEvent": [
+				"Child sObject [CaseChangeEvent] is not processed"
+			],
+			"Account.RecordAssociatedGroups => CollaborationGroupRecord": [
+				"Child sObject [CollaborationGroupRecord] is not processed"
+			],
+			"Account.CombinedAttachments => CombinedAttachment": [
+				"Child sObject [CombinedAttachment] is not processed"
+			],
+			"Account.null => ContactChangeEvent": [
+				"Child sObject [ContactChangeEvent] is not processed"
+			],
+			"Account.ContactRequests => ContactRequest": [
+				"Child sObject [ContactRequest] is not processed"
+			],
+			"Account.null => ContentDistribution": [
+				"Child sObject [ContentDistribution] is not processed"
+			],
+			"Account.ContentDocumentLinks => ContentDocumentLink": [
+				"Child sObject [ContentDocumentLink] is not processed"
+			],
+			"Account.null => ContentVersion": [
+				"Child sObject [ContentVersion] is not processed"
+			],
+			"Account.Contracts => Contract": [
+				"Child sObject [Contract] is not processed"
+			],
+			"Account.null => ContractChangeEvent": [
+				"Child sObject [ContractChangeEvent] is not processed"
+			],
+			"Account.DuplicateRecordItems => DuplicateRecordItem": [
+				"Child sObject [DuplicateRecordItem] is not processed"
+			],
+			"Account.Emails => EmailMessage": [
+				"Child sObject [EmailMessage] is not processed"
+			],
+			"Account.FeedSubscriptionsForEntity => EntitySubscription": [
+				"Child sObject [EntitySubscription] is not processed"
+			],
+			"Account.null => Event": [
+				"Child sObject [Event] is not processed"
+			],
+			"Account.Events => Event": [
+				"Child sObject [Event] is not processed"
+			],
+			"Account.null => EventChangeEvent": [
+				"Child sObject [EventChangeEvent] is not processed"
+			],
+			"Account.null => EventRelationChangeEvent": [
+				"Child sObject [EventRelationChangeEvent] is not processed"
+			],
+			"Account.null => FeedComment": [
+				"Child sObject [FeedComment] is not processed"
+			],
+			"Account.null => FeedItem": [
+				"Child sObject [FeedItem] is not processed"
+			],
+			"Account.null => FlowRecordRelation": [
+				"Child sObject [FlowRecordRelation] is not processed"
+			],
+			"Account.null => Lead": [
+				"Child sObject [Lead] is not processed"
+			],
+			"Account.null => LeadChangeEvent": [
+				"Child sObject [LeadChangeEvent] is not processed"
+			],
+			"Account.Notes => Note": [
+				"Child sObject [Note] is not processed"
+			],
+			"Account.NotesAndAttachments => NoteAndAttachment": [
+				"Child sObject [NoteAndAttachment] is not processed"
+			],
+			"Account.OpenActivities => OpenActivity": [
+				"Child sObject [OpenActivity] is not processed"
+			],
+			"Account.null => OpportunityChangeEvent": [
+				"Child sObject [OpportunityChangeEvent] is not processed"
+			],
+			"Account.OpportunityPartnersTo => OpportunityPartner": [
+				"Child sObject [OpportunityPartner] is not processed"
+			],
+			"Account.Orders => Order": [
+				"Child sObject [Order] is not processed"
+			],
+			"Account.null => OrderChangeEvent": [
+				"Child sObject [OrderChangeEvent] is not processed"
+			],
+			"Account.null => OutgoingEmail": [
+				"Child sObject [OutgoingEmail] is not processed"
+			],
+			"Account.PartnersFrom => Partner": [
+				"Child sObject [Partner] is not processed"
+			],
+			"Account.PartnersTo => Partner": [
+				"Child sObject [Partner] is not processed"
+			],
+			"Account.ProcessInstances => ProcessInstance": [
+				"Child sObject [ProcessInstance] is not processed"
+			],
+			"Account.ProcessSteps => ProcessInstanceHistory": [
+				"Child sObject [ProcessInstanceHistory] is not processed"
+			],
+			"Account.RecordActions => RecordAction": [
+				"Child sObject [RecordAction] is not processed"
+			],
+			"Account.RecordActionHistories => RecordActionHistory": [
+				"Child sObject [RecordActionHistory] is not processed"
+			],
+			"Account.Personas => SocialPersona": [
+				"Child sObject [SocialPersona] is not processed"
+			],
+			"Account.Posts => SocialPost": [
+				"Child sObject [SocialPost] is not processed"
+			],
+			"Account.null => Task": [
+				"Child sObject [Task] is not processed"
+			],
+			"Account.Tasks => Task": [
+				"Child sObject [Task] is not processed"
+			],
+			"Account.null => TaskChangeEvent": [
+				"Child sObject [TaskChangeEvent] is not processed"
+			],
+			"Account.TopicAssignments => TopicAssignment": [
+				"Child sObject [TopicAssignment] is not processed"
+			],
+			"Account.Users => User": [
+				"Child sObject [User] is not processed"
+			],
+			"Account.null => UserChangeEvent": [
+				"Child sObject [UserChangeEvent] is not processed"
+			],
+			"Account.null => UserRole": [
+				"Child sObject [UserRole] is not processed"
 			]
 		},
 		"ADD_SOBJECT": {
@@ -3299,8 +3373,6 @@
 				"Was Not requested"
 			],
 			"AccountPartner": [
-				"Must be createable",
-				"Must be deletable",
 				"Must be replicateable",
 				"Must be searchable",
 				"Must be undeletable",
@@ -3452,6 +3524,10 @@
 				"Must be undeletable",
 				"Was Not requested"
 			],
+			"AppAnalyticsQueryRequest": [
+				"Must be searchable",
+				"Was Not requested"
+			],
 			"AppDefinition": [
 				"Must be createable",
 				"Must be deletable",
@@ -3562,6 +3638,28 @@
 				"Must be updateable",
 				"Was Not requested"
 			],
+			"AsyncOperationEvent": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be queryable",
+				"Must be replicateable",
+				"Must be retrieveable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"AsyncOperationStatus": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be queryable",
+				"Must be replicateable",
+				"Must be retrieveable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
 			"AttachedContentDocument": [
 				"Must be createable",
 				"Must be deletable",
@@ -3646,6 +3744,68 @@
 			"AuthSession": [
 				"Must be createable",
 				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"AuthorizationForm": [
+				"Was Not requested"
+			],
+			"AuthorizationFormConsent": [
+				"Was Not requested"
+			],
+			"AuthorizationFormConsentHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"AuthorizationFormConsentShare": [
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Was Not requested"
+			],
+			"AuthorizationFormDataUse": [
+				"Was Not requested"
+			],
+			"AuthorizationFormDataUseHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"AuthorizationFormDataUseShare": [
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Was Not requested"
+			],
+			"AuthorizationFormHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"AuthorizationFormShare": [
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Was Not requested"
+			],
+			"AuthorizationFormText": [
+				"Was Not requested"
+			],
+			"AuthorizationFormTextHistory": [
+				"Must be createable",
+				"Must be deletable",
 				"Must be searchable",
 				"Must be undeletable",
 				"Must be updateable",
@@ -3746,9 +3906,29 @@
 				"Must be undeletable",
 				"Was Not requested"
 			],
+			"CampaignMemberChangeEvent": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be queryable",
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
 			"CampaignMemberStatus": [
 				"Must be searchable",
 				"Must be undeletable",
+				"Was Not requested"
+			],
+			"CampaignMemberStatusChangeEvent": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be queryable",
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
 				"Was Not requested"
 			],
 			"CampaignShare": [
@@ -4061,6 +4241,17 @@
 				"Must be updateable",
 				"Was Not requested"
 			],
+			"ContactPointTypeConsent": [
+				"Was Not requested"
+			],
+			"ContactPointTypeConsentHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
 			"ContactRequest": [
 				"Must be searchable",
 				"Was Not requested"
@@ -4169,6 +4360,24 @@
 				"Must be undeletable",
 				"Was Not requested"
 			],
+			"ContentHubItem": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be replicateable",
+				"Must be retrieveable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"ContentHubRepository": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
 			"ContentNote": [
 				"Must be replicateable",
 				"Must be undeletable",
@@ -4261,6 +4470,16 @@
 				"Was Not requested"
 			],
 			"Contract": [
+				"Was Not requested"
+			],
+			"ContractChangeEvent": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be queryable",
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
 				"Was Not requested"
 			],
 			"ContractContactRole": [
@@ -4530,6 +4749,40 @@
 				"Must be updateable",
 				"Was Not requested"
 			],
+			"DataUseLegalBasis": [
+				"Was Not requested"
+			],
+			"DataUseLegalBasisHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"DataUseLegalBasisShare": [
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Was Not requested"
+			],
+			"DataUsePurpose": [
+				"Was Not requested"
+			],
+			"DataUsePurposeHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"DataUsePurposeShare": [
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Was Not requested"
+			],
 			"DatacloudAddress": [
 				"Must be createable",
 				"Must be deletable",
@@ -4678,6 +4931,16 @@
 				"Must be updateable",
 				"Was Not requested"
 			],
+			"EnhancedLetterhead": [
+				"Was Not requested"
+			],
+			"EnhancedLetterheadFeed": [
+				"Must be createable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
 			"EntityDefinition": [
 				"Must be createable",
 				"Must be deletable",
@@ -4755,6 +5018,14 @@
 				"Must be searchable",
 				"Must be undeletable",
 				"Must be updateable",
+				"Was Not requested"
+			],
+			"ExpressionFilter": [
+				"Must be searchable",
+				"Was Not requested"
+			],
+			"ExpressionFilterCriteria": [
+				"Must be searchable",
 				"Was Not requested"
 			],
 			"ExternalDataSource": [
@@ -4865,6 +5136,15 @@
 				"Must be undeletable",
 				"Was Not requested"
 			],
+			"FieldSecurityClassification": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
 			"FileSearchActivity": [
 				"Must be createable",
 				"Must be deletable",
@@ -4882,6 +5162,16 @@
 				"Was Not requested"
 			],
 			"FlexQueueItem": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be replicateable",
+				"Must be retrieveable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"FlowDefinitionView": [
 				"Must be createable",
 				"Must be deletable",
 				"Must be replicateable",
@@ -4911,6 +5201,26 @@
 			"FlowStageRelation": [
 				"Must be createable",
 				"Must be searchable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"FlowVariableView": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be replicateable",
+				"Must be retrieveable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"FlowVersionView": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be replicateable",
+				"Must be retrieveable",
+				"Must be searchable",
+				"Must be undeletable",
 				"Must be updateable",
 				"Was Not requested"
 			],
@@ -4999,6 +5309,23 @@
 				"Was Not requested"
 			],
 			"ImageShare": [
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Was Not requested"
+			],
+			"Individual": [
+				"Was Not requested"
+			],
+			"IndividualHistory": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"IndividualShare": [
 				"Must be replicateable",
 				"Must be searchable",
 				"Must be undeletable",
@@ -5155,7 +5482,6 @@
 				"Must be createable",
 				"Must be deletable",
 				"Must be replicateable",
-				"Must be searchable",
 				"Must be undeletable",
 				"Must be updateable",
 				"Was Not requested"
@@ -5197,6 +5523,17 @@
 			"LoginIp": [
 				"Must be createable",
 				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Must be updateable",
+				"Was Not requested"
+			],
+			"LogoutEventStream": [
+				"Must be createable",
+				"Must be deletable",
+				"Must be queryable",
+				"Must be replicateable",
+				"Must be retrieveable",
 				"Must be searchable",
 				"Must be undeletable",
 				"Must be updateable",
@@ -5316,6 +5653,12 @@
 				"Must be updateable",
 				"Was Not requested"
 			],
+			"OauthCustomScope": [
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Was Not requested"
+			],
 			"OauthToken": [
 				"Must be createable",
 				"Must be deletable",
@@ -5408,8 +5751,6 @@
 				"Was Not requested"
 			],
 			"OpportunityPartner": [
-				"Must be createable",
-				"Must be deletable",
 				"Must be replicateable",
 				"Must be searchable",
 				"Must be undeletable",
@@ -5634,6 +5975,12 @@
 				"Must be updateable",
 				"Was Not requested"
 			],
+			"PermissionSetPortalDelegate": [
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Was Not requested"
+			],
 			"PermissionSetTabSetting": [
 				"Must be replicateable",
 				"Must be searchable",
@@ -5790,6 +6137,28 @@
 			],
 			"Profile": [
 				"Must be createable",
+				"Must be undeletable",
+				"Was Not requested"
+			],
+			"Prompt": [
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Was Not requested"
+			],
+			"PromptAction": [
+				"Must be searchable",
+				"Was Not requested"
+			],
+			"PromptActionShare": [
+				"Must be replicateable",
+				"Must be searchable",
+				"Must be undeletable",
+				"Was Not requested"
+			],
+			"PromptVersion": [
+				"Must be replicateable",
+				"Must be searchable",
 				"Must be undeletable",
 				"Was Not requested"
 			],
