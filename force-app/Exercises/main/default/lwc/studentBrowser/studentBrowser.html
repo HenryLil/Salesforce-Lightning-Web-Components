@@ -1,9 +1,9 @@
 <template>
-    <c-student-browser-form></c-student-browser-form>
+	<c-student-browser-form onfilterchange={handleFilterChange}></c-student-browser-form>
 
-    <lightning-tabset variant="scoped">
-        <lightning-tab label="Gallery">
-            <c-student-tiles student-list={students.data}></c-student-tiles>
-        </lightning-tab>
-    </lightning-tabset>
+	<lightning-tabset variant="scoped">
+		<lightning-tab label="Gallery">
+			<c-student-tiles student-list={students.data}></c-student-tiles>
+		</lightning-tab>
+	</lightning-tabset>
 </template>
