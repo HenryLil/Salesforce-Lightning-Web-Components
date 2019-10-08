@@ -1,7 +1,22 @@
 <template>
-	<div class="slds-box slds-theme_inverse">
-		
-		<lightning-formatted-date-time value={timestamp} year="numeric" month="numeric" day="numeric" hour="2-digit" minute="2-digit" second="2-digit" time-zone-name="short">
-		</lightning-formatted-date-time>
+	<div class="slds-float_right">
+		<lightning-card title="Current Date and Time" icon-name="utility:emoji">
+			<div class="slds-m-left_medium">
+				<lightning-formatted-date-time
+					value={timestamp}
+					weekday="long"
+					year="numeric"
+					month="numeric"
+					day="numeric"
+					hour="2-digit"
+					minute="2-digit"
+					second="2-digit"
+					hour12="false"
+					time-zone-name="short"
+				>
+				</lightning-formatted-date-time>
+			</div>
+			<lightning-button-icon slot="actions" icon-name="action:refresh" onclick={refresh}></lightning-button-icon>
+		</lightning-card>
 	</div>
 </template>
