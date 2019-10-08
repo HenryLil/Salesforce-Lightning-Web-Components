@@ -1,0 +1,16 @@
+{
+  "name": "lwc",
+  "version": "1.0.0",
+  "description": "## Dev, Build and Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@salesforce/lwc-jest": "^0.5.4",
+    "prettier": "^1.18.2",
+    "prettier-plugin-apex": "^1.0.0"
+  }
+}
