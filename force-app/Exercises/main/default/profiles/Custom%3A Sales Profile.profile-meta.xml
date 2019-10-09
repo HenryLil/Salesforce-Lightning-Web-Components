@@ -20,6 +20,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CourseDeliveries</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CourseDeliveryLocations</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -265,6 +269,10 @@
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>AwInstructors</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>AwInstructors_Cmp_Tab</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

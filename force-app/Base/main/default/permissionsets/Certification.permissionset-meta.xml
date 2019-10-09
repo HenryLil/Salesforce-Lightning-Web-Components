@@ -248,6 +248,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>AwInstructors_Cmp_Tab</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Certification__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>

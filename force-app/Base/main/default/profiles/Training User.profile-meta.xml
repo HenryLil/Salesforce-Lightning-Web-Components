@@ -20,6 +20,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CourseDeliveries</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CourseDeliveryLocations</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -252,6 +256,9 @@
         <layout>Course__c-Course Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Lead-Lead Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>TripReport__c-Trip Report Layout</layout>
     </layoutAssignments>
     <recordTypeVisibilities>
@@ -276,6 +283,10 @@
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>AwInstructors</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>AwInstructors_Cmp_Tab</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
