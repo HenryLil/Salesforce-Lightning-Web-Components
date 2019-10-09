@@ -42,7 +42,7 @@ export default class StudentDetail extends NavigationMixin(LightningElement) {
 		this[NavigationMixin.Navigate]({
 			type: "standard__recordPage",
 			attributes: {
-				recordId: "this.studentId",
+				recordId: this.studentId,
 				actionName: "view"
 			}
 		});
