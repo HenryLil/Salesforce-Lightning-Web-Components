@@ -1,0 +1,18 @@
+<template>
+	<lightning-card title="Nav">
+		<lightning-vertical-navigation selected-item="students" onselect={onselect}>
+			<lightning-vertical-navigation-section label="Browse">
+				<lightning-vertical-navigation-item-icon label="Student Browser" name="students" icon-name="utility:groups"> </lightning-vertical-navigation-item-icon>
+				<lightning-vertical-navigation-item-icon label="Trip Reports" name="tripreports" icon-name="utility:travel_and_places"> </lightning-vertical-navigation-item-icon>
+				<lightning-vertical-navigation-item-icon label="Cert Popularity" name="certpopularity" icon-name="utility:metrics"> </lightning-vertical-navigation-item-icon>
+			</lightning-vertical-navigation-section>
+			<lightning-vertical-navigation-section label="Certification">
+				<lightning-vertical-navigation-overflow>
+					<template for:each={certifications} for:item="cert">
+						<lightning-vertical-navigation-item key={cert.Id} label={cert.Name} name={cert.compoundKey}></lightning-vertical-navigation-item>
+					</template>
+				</lightning-vertical-navigation-overflow>
+			</lightning-vertical-navigation-section>
+		</lightning-vertical-navigation>
+	</lightning-card>
+</template>
