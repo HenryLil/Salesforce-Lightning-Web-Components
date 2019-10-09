@@ -298,6 +298,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Course_Attendee__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Course_Delivery__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
