@@ -1,16 +1,17 @@
-import { LightningElement, wire } from 'lwc';
-//import { getRecentDeliveries } from "@salesforce/apex/CourseDeliveries.getRecentDeliveries";
+import getRecentDeliveries from "@salesforce/apex/CourseDeliveries.getRecentDeliveries";
+import { LightningElement, wire, track } from 'lwc';
 
 export default class Challenge_recentDeliveries extends LightningElement {
-   /* @wire(getRecentDeliveries, {})
+    @track deliveries;
+    @wire(getRecentDeliveries)
     recentDeliveries({error,data}) {
-        this.recentDeliveries = [];
+        this.deliveries = [];
         if (data) {
-            this.recentDeliveries = data;
+            this.deliveries = data;
             this.error = undefined;
-                }else )
-            })
-            
+        }else if (error){
+            this.error = error;
+            this.deliveries = undefined;
         }
-    } */
+    }
 }

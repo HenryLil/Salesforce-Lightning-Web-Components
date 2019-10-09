@@ -1,8 +1,12 @@
 <template>
-    <lightning-card title="Recent Worldwide Deliveries" icon-name="utility:world">
-        <div class="slds-m-left_medium">
-            <p>test</p>
-        </div>
-    </lightning-card>
-    
+	<lightning-card title="Recent Worldwide Deliveries" icon-name="utility:world">
+		<div class="slds-m-left_medium">
+			<template for:each={deliveries} for:item="delivery">
+				<p key={delivery.Id}>
+					<b>{delivery.Course__r.Name}</b>
+					<br />{delivery.Location__c} on {delivery.Start_Date__c}
+				</p>
+			</template>
+		</div>
+	</lightning-card>
 </template>
