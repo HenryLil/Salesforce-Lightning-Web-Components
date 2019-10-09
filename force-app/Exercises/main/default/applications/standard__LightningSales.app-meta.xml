@@ -8,6 +8,7 @@
     <label>Sales</label>
     <navType>Standard</navType>
     <tabs>standard-home</tabs>
+    <tabs>Deliveries_Map</tabs>
     <tabs>Challenge_Page</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
