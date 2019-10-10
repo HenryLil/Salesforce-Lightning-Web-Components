@@ -10,6 +10,8 @@ export default class LayoutManager extends LightningElement {
 	@track viewMode = VIEW_STUDENT_BROWSER;
 	@track certificationName = "";
 	@track certificationId = 0;
+	@track modalHeader ="";
+	@track modalContent="";
 	connectedCallback() {
 		Utils.showToast(this, "Welcome", "Dont forget to check back here for updated class schedules and assignments lol", "info");
 	}
@@ -29,6 +31,17 @@ export default class LayoutManager extends LightningElement {
 			this.certificationId = selectedCertificationObj[1];
 			this.certificationName = selectedCertificationObj[2];
 		}
+	}
+
+	handleShowModal(event){
+		this.modalHeader = event.detail.header;
+		this.modalContent = event.detail.content;
+		const modal = this.template.querySelector('c-modal');
+		modal.show();
+	}
+	closeModal() {
+		const modal = this.template.querySelector('c-modal');
+		modal.hide();
 	}
 
 	get studentBrowserView() {
