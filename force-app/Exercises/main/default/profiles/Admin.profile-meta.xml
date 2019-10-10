@@ -16,6 +16,14 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>AwNavigation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CertifiedStudentList</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CourseAttendeeTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -324,6 +332,10 @@
         <object>TripReport__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <pageAccesses>
+        <apexPage>DeliveryListVF</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Customer</recordType>

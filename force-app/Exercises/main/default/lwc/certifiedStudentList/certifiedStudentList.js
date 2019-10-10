@@ -4,7 +4,8 @@ import getCertifiedStudents from "@salesforce/apex/CertifiedStudentList.getCerti
 export default class CertifiedStudentList extends LightningElement {
 	@api certificationId = 0;
 	@api certificationName = "";
-	@track certifiedStudents;
+    @track certifiedStudents;
+    @track btnGroupDisabled = "disabled";
     error;
     
 	@wire(getCertifiedStudents, { certificationId: "$certificationId" }) wired_getCertifiedStudents(result) {
@@ -48,4 +49,8 @@ export default class CertifiedStudentList extends LightningElement {
         }
     ];
 
+    onRowSelection(event) {
+        let numSelected = event.detail.selectedRows.length;
+        this.btnGroupDisabled = (numSelected ===0);
+    }
 }
