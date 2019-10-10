@@ -4,7 +4,7 @@ export default class Challenge_currentDateTime extends LightningElement {
     @track timestamp = new Date();
     connectedCallback() {
         // eslint-disable-next-line @lwc/lwc/no-async-operation
-        setInterval(() => {this.refresh()}, 100);
+        setInterval(() => {this.refresh()}, 1000);
     }
 
     @api
