@@ -40,9 +40,6 @@ export default class StudentBrowser extends NavigationMixin(LightningElement) {
 		this.updateSelectedStudent(studentId);
 	}
 
-	updateSelectedStudent(studentId) {
-		fireEvent(this.pageRef, "studentChange", { studentId });
-	}
 	handleRowDblClick(event) {
 		const studentId = event.detail.pk;
 		this[NavigationMixin.Navigate] ({
@@ -53,5 +50,14 @@ export default class StudentBrowser extends NavigationMixin(LightningElement) {
 				actionName: 'edit'
 			}
 		});
+	}
+	
+	handleRowClick(event) {
+		let studentId = event.detail.pk;
+		this.updateSelectedStudent(studentId);
+	}
+
+	updateSelectedStudent(studentId) {
+		fireEvent(this.pageRef, "studentChange", { studentId });
 	}
 }
