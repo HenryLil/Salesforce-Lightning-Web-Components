@@ -8,6 +8,7 @@ export default class StudentBrowser extends NavigationMixin(LightningElement) {
 	@track selectedInstructorId = "";
 	@wire(getStudents, { instructorId: "$selectedInstructorId", courseDeliveryId: "$selectedDeliveryId" }) students;
 	@wire(CurrentPageReference) pageRef;
+
 	cols = [
 		{
 			fieldName: "Name",
@@ -58,6 +59,15 @@ export default class StudentBrowser extends NavigationMixin(LightningElement) {
 	}
 
 	updateSelectedStudent(studentId) {
+		let grid = this.template.querySelector('c-responsive-datatable');
+		let gallery = this.template.querySelector('c-student-tiles');
+		if (grid) {
+			grid.setSelectedRecord(studentId);
+		}
+		if(gallery){
+			gallery.setSelectedStudent(studentId);
+		}
 		fireEvent(this.pageRef, "studentChange", { studentId });
+
 	}
 }

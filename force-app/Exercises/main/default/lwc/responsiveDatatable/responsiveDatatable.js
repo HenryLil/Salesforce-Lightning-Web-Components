@@ -6,6 +6,17 @@ export default class ResponsiveDatatable extends LightningElement {
 	@track rows = [];
 	_selectedRow;
 
+	@api setSelectedRecord(recordId) {
+		let tableRows = this.template.querySelectorAll('tr');
+		for (let i = 0; i < tableRows.length;i++) {
+			let currentRow = tableRows[i];
+			if(currentRow.getAttribute('data-pk')===recordId) {
+				this.highlightSelectedRow(currentRow);
+				break;
+			}
+		}
+	}
+
 	reformatRows = function(rowData) {
 		let colItems = this.columnConfig;
 		let reformattedRows = [];
