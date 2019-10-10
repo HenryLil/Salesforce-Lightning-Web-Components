@@ -1,3 +1,8 @@
 .scrollerSize {
     height: 450px;
 }
+@media (max-width: 767px) {
+    .hiddenOnMobile {
+        display: none !important;
+    }
+}
