@@ -3,8 +3,9 @@
 
 	<lightning-tabset variant="scoped">
 		<lightning-tab label="Gallery">
-			<c-student-tiles student-list={students.data} 
-			onstudentselected={handleStudentSelected}></c-student-tiles>
+			<div class="slds-scrollable scrollerSize">
+				<c-student-tiles student-list={students.data} onstudentselected={handleStudentSelected}></c-student-tiles>
+			</div>
 		</lightning-tab>
 	</lightning-tabset>
 </template>
