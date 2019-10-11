@@ -28,7 +28,7 @@ export default class TripReportFormAdvanced extends LightningElement {
 	_editorInitialized;
 
 	@api recordId;
-	
+	@track saveButtonDisabled = true;
 	//arrays to populate form options
 	@track instructors;
 	@track reviewTypes;
@@ -39,7 +39,7 @@ export default class TripReportFormAdvanced extends LightningElement {
 	@track dateVisited;
 	@track reviewType;
 	@track rating;
-	@track review;
+    @track review;
 	
 	//TODO #3: following the examples of and FIELD_DATE and FIELD_INSTRUCTOR, import the name, rating, review type, and review fields
 	@wire(getRecord, { recordId: '$recordId', fields:fieldsToLoad })
@@ -119,10 +119,27 @@ export default class TripReportFormAdvanced extends LightningElement {
 	onReviewChange(event) {
         this.review = event.target.value;
 	}
+    onBlur() {
+        this.saveButtonDisabled = !this.validateFields();
+    }
+
+    validateFields() {
+        let field = null;
+        let fields = this.template.querySelectorAll('.validateMe');
+        let result = true;
+        for (let i=0;i<fields.length;i++) {
+            field = fields[i];
+            result=field.checkValidity();
+            if(!result) break;
+        }
+        return result;
+    }
 
 	onSave() {
 		this.saveTripReport();
-	}
+    }
+    
+    
 	saveTripReport() {
 		const fieldsToSave = {}
 		fieldsToSave[FIELD_DATE.fieldApiName] = this.dateVisited;
@@ -169,6 +186,8 @@ export default class TripReportFormAdvanced extends LightningElement {
                 });
 		}
 		
-	}
+    }
+    
+    
 
 }
