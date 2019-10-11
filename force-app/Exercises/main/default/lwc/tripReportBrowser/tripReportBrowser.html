@@ -1,0 +1,24 @@
+<template>
+    <lightning-layout horizontal-align="space" multiple-rows="true">
+		<lightning-layout-item size="8" >
+			<lightning-card title="Trip Reports">
+				<lightning-button slot="actions"  label="New" variant="brand"></lightning-button>
+				<div class="slds-scrollable scrollerSize" >
+					<c-responsive-datatable 
+						pk-field="Id"
+						column-config={cols}
+						row-data={tripReports}
+						>
+					</c-responsive-datatable>
+				</div>
+			</lightning-card>
+		</lightning-layout-item>
+		<lightning-layout-item size="4" padding="horizontal-medium"> 
+			<template if:true={selectedRecordId}>
+				<lightning-card title="Report Detail">
+					<!-- report detail will go here -->
+				</lightning-card>
+			</template>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>
