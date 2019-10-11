@@ -27,6 +27,7 @@ export default class TripReportBrowser extends LightningElement {
 	];
 
 	@track tripReports;
+	@track selectedRecordId=0;
 
 	connectedCallback() {
 		getAll()
@@ -53,6 +54,22 @@ export default class TripReportBrowser extends LightningElement {
 				this.tripReports = reports;
 			} 
 		});
+	}
+	changeTripReportMode(newMode) {
+		let eventDetail = {
+			mode: newMode
+			}
+			if (newMode === 'edit'){
+				eventDetail.Id = this.selectedRecordId;
+			}
+		const evt = new CustomEvent('tripreportmodechange', {
+			detail: eventDetail
+		});
+		this.dispatchEvent(evt);
+	}
+
+	onBtnNewClick() {
+		this.changeTripReportMode('add');
 	}
 	
 

@@ -3,7 +3,7 @@
 		<lightning-layout horizontal-align="space" multiple-rows="true" >
 			<lightning-layout-item flexibility="auto" class="slds-p-right_small slds-p-bottom_small" size="6" small-device-size="12" medium-device-size="7" large-device-size="8">
 				<!-- deploy the advanced trip report form here -->
-				<c-trip-report-form-advanced></c-trip-report-form-advanced>
+				<c-trip-report-form-advanced record-id={selectedTripReportId} ontripreportmodechange={handleTripReportModeChange}></c-trip-report-form-advanced>
 			</lightning-layout-item>
 			<lightning-layout-item flexibility="auto"  size="6" small-device-size="12" medium-device-size="5" large-device-size="4" >
 				<lightning-card variant="Narrow" title="Instructions" icon-name="standard:article">
@@ -23,7 +23,7 @@
 
 	<template if:true={browseMode}>
 		<!-- deploy the trip report browser here -->
-		<c-trip-report-browser></c-trip-report-browser>
+		<c-trip-report-browser ontripreportmodechange={handleTripReportModeChange}></c-trip-report-browser>
 	</template>
 
 </template>
