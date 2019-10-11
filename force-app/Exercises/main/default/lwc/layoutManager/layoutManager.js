@@ -12,6 +12,7 @@ export default class LayoutManager extends LightningElement {
 	@track certificationId = 0;
 	@track modalHeader ="";
 	@track modalContent="";
+	@track loading=false;
 	connectedCallback() {
 		Utils.showToast(this, "Welcome", "Dont forget to check back here for updated class schedules and assignments lol", "info");
 	}
@@ -42,6 +43,12 @@ export default class LayoutManager extends LightningElement {
 	closeModal() {
 		const modal = this.template.querySelector('c-modal');
 		modal.hide();
+	}
+	handleLoading() {
+		this.loading=true;
+	}
+	handleDoneLoading() {
+		this.loading=false;
 	}
 
 	get studentBrowserView() {
