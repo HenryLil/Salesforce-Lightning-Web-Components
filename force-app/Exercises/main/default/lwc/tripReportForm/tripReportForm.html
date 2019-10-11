@@ -1,0 +1,19 @@
+<template>
+	<lightning-card title="Add Trip Report">
+		<div class="slds-p-around_medium">
+			<lightning-record-edit-form object-api-name="TripReport__c" onsuccess={doSuccess}>
+				<lightning-messages></lightning-messages>
+				<lightning-input-field field-name="Name"></lightning-input-field>
+				<lightning-input-field field-name="Date__c"></lightning-input-field>
+				<lightning-input-field field-name="ReviewType__c"></lightning-input-field>
+				<lightning-input-field field-name="Instructor__c"></lightning-input-field>
+				<lightning-input-field field-name="Rating__c"></lightning-input-field>
+				<lightning-input-field field-name="Review__c"></lightning-input-field>
+				<lightning-button-group>
+					<lightning-button class="slds-m-top_small" type="submit" label="Create New"></lightning-button>
+					<lightning-button class="slds-m-top_small" type="reset" label="Cancel"></lightning-button>
+				</lightning-button-group>
+			</lightning-record-edit-form>
+		</div>
+	</lightning-card>
+</template>
