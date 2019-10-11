@@ -1,24 +1,30 @@
 <template>
-    <lightning-layout horizontal-align="space" multiple-rows="true">
-		<lightning-layout-item size="8" >
+	<lightning-layout horizontal-align="space" multiple-rows="true">
+		<lightning-layout-item size="8">
 			<lightning-card title="Trip Reports">
-				<lightning-button slot="actions"  label="New" variant="brand" onclick={onBtnNewClick}></lightning-button>
-				<div class="slds-scrollable scrollerSize" >
-					<c-responsive-datatable 
-						pk-field="Id"
-						column-config={cols}
-						row-data={tripReports}
-						onrowclick={handleRowClick}
-						onrowdblclick={handleRowDblClick}
-						>
+				<lightning-button slot="actions" label="New" variant="brand" onclick={onBtnNewClick}></lightning-button>
+				<div class="slds-scrollable scrollerSize">
+					<c-responsive-datatable pk-field="Id" column-config={cols} row-data={tripReports} onrowclick={handleRowClick} onrowdblclick={handleRowDblClick}>
 					</c-responsive-datatable>
 				</div>
 			</lightning-card>
 		</lightning-layout-item>
-		<lightning-layout-item size="4" padding="horizontal-medium"> 
+		<lightning-layout-item size="4" padding="horizontal-medium">
 			<template if:true={selectedRecordId}>
 				<lightning-card title="Report Detail">
 					<!-- report detail will go here -->
+					<lightning-button slot="actions" label="Edit" variant="brand" onclick={onBtnEditClick}></lightning-button>
+					<div class="slds-p-around_medium">
+							
+						<lightning-record-view-form record-id={selectedRecordId} object-api-name="TripReport__c">
+							<lightning-output-field field-name="Name"> </lightning-output-field>
+							<lightning-output-field field-name="Instructor__c"> </lightning-output-field>
+							<lightning-output-field field-name="Date__c"> </lightning-output-field>
+							<lightning-output-field field-name="ReviewType__c"> </lightning-output-field>
+							<lightning-output-field field-name="Rating__c"> </lightning-output-field>
+							<lightning-output-field field-name="Review__c"> </lightning-output-field>
+						</lightning-record-view-form>
+					</div>
 				</lightning-card>
 			</template>
 		</lightning-layout-item>
