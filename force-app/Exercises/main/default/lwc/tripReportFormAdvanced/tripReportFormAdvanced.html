@@ -62,7 +62,7 @@
 			<lightning-input-rich-text disabled-categories="FORMAT_FONT" value={review} onchange={onReviewChange}></lightning-input-rich-text>
 			<div class="slds-text-align_center slds-m-top_medium">
 				<lightning-button variant="brand" label="Save" onclick={onSave} class="slds-m-right_x-small" disabled={saveButtonDisabled}></lightning-button>
-				<lightning-button label="Cancel"></lightning-button>
+				<lightning-button label="Cancel" onclick={onCancel}></lightning-button>
 			</div>
 		</form>
 	</lightning-card>
