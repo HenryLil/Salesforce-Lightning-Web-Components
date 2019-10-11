@@ -1,0 +1,13 @@
+<template>
+	<lightning-card title="Contact Directory">
+        <lightning-button-menu onselect={handleMenuSelect} slot="actions">
+            <template for:each={items} for:item="letter">
+                <lightning-menu-item id={letter.id} label={letter.label} value={letter.value} key={letter.value}></lightning-menu-item>
+            </template>
+            
+        </lightning-button-menu>
+		<div style="height: 600px;" class="slds-grid slds-einstein-header slds-card__header">
+			<lightning-datatable style="height:300px;" key-field="id" data={contacts} columns={columns} hide-checkbox-column> </lightning-datatable>
+		</div>
+    </lightning-card>
+</template>
